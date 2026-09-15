@@ -1,28 +1,34 @@
 ---
 title: AgentCore AI Platform POC
-description: "Project landing page for the AgentCore platform experiments: model access, credentials, Gateway/Policy, and governed workflows."
+description: "Curated lessons from platform access, Bedrock credentials, AgentCore Gateway/Policy, Harness, and governed workflow experiments."
 ---
 
 ## 🧠 What this project explores
 
-A deliberately small platform-AI POC where applications use a platform key to access approved models through one controlled API rather than receiving AWS credentials directly.
+A deliberately small platform-AI learning repository that separates **developer experience, model access, credentials, policy, execution, and evidence** instead of treating them as one AI feature.
 
-The public repository also contains later experiments around Bedrock service-specific credentials, AgentCore Gateway/Policy, harness patterns, governed workflows, and developer-facing platform experience.
+The original MVP proved that an application can use a platform key to call one approved model through an internal API without receiving AWS credentials, while a disallowed model is denied and logged. Later experiments add native Bedrock API keys, AgentCore Gateway/Policy, Harness lifecycle work, and a bounded governed MCP workflow.
+
+## 📚 Read this project as four patterns
+
+1. [**Platform architecture**](/kb/agentcore-ai-platform/platform-architecture/) — controlled model access without handing application users general AWS credentials.
+2. [**Bedrock API keys**](/kb/agentcore-ai-platform/bedrock-api-keys/) — credential type, model scoping, expiry, audit, and proof boundaries.
+3. [**Gateway & Policy**](/kb/agentcore-ai-platform/gateway-policy/) — deterministic authorization and how to prove a denied request did not reach the backend.
+4. [**Harness & governed workflow**](/kb/agentcore-ai-platform/harness-governed-workflow/) — managed Harness lifecycle vs a separately governed MCP remediation path.
 
 ## Reusable themes
 
-- **Model access as policy** — a project can be allowed one model and denied another.
-- **Credentials are lifecycle objects** — issue, scope, expire, reveal carefully, and audit.
-- **Gateway/Policy is a governance layer** — model intent is not enough to authorize a tool/action.
-- **Developer experience matters** — governance has to remain understandable from project, playground, and logs views.
+- Model access is a policy decision, not just a model-selection dropdown.
+- Credentials need explicit scope, expiry, revocation, storage, and audit rules.
+- Gateway/Policy can govern exact tool calls without requiring a model in the proof.
+- Harness is useful as a managed execution environment, but a short Harness lifecycle proof is not evidence of a production agent platform.
+- Keep **current/proven**, **designed**, and **future** states separate.
 
-:::note[Detailed extraction next]
-This phase establishes the landing page. The next KB slice will curate the project into focused articles on platform architecture, model governance, Bedrock credentials, Gateway/Policy, and harness/workflow lessons.
-:::
-
-## Source
+## 🔗 Source
 
 - [Public repository](https://github.com/mytestlab123/AgentCore)
-- [Harness MVP guide](https://github.com/mytestlab123/AgentCore/blob/main/docs/HARNESS_MVP_GUIDE.md)
+- [README](https://github.com/mytestlab123/AgentCore/blob/main/README.md)
+- [Bedrock API key proof](https://github.com/mytestlab123/AgentCore/blob/main/docs/ISSUE_9_BEDROCK_API_KEYS.md)
 - [Gateway/Policy learnings](https://github.com/mytestlab123/AgentCore/blob/main/docs/AGENTCORE_CLI_GATEWAY_POLICY_LEARNINGS.md)
+- [Harness MVP guide](https://github.com/mytestlab123/AgentCore/blob/main/docs/HARNESS_MVP_GUIDE.md)
 - [Governed workflow](https://github.com/mytestlab123/AgentCore/blob/main/docs/ISSUE40_GOVERNED_WORKFLOW.md)

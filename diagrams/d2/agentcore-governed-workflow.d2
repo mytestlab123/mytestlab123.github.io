@@ -1,0 +1,48 @@
+direction: right
+
+agent: "LibreChat Agent\nALLOW / ASK / DENY" {
+  shape: rectangle
+  style.fill: "#eef2ff"
+  style.stroke: "#4f46e5"
+}
+approval: "Human decision\nApprove / Reject" {
+  shape: diamond
+  style.fill: "#fff7ed"
+  style.stroke: "#ea580c"
+}
+mcp: "Governance MCP\nfixed sanitized contract" {
+  style.fill: "#eff6ff"
+  style.stroke: "#2563eb"
+}
+gateway: "AgentCore Gateway\nIAM-protected transport" {
+  style.fill: "#f5f3ff"
+  style.stroke: "#7c3aed"
+}
+policy: "Cedar policy\nALLOW dev / default DENY" {
+  style.fill: "#fefce8"
+  style.stroke: "#ca8a04"
+}
+tool: "Exact remediation tool\nfixed TCP/22 revoke" {
+  style.fill: "#ecfdf5"
+  style.stroke: "#059669"
+}
+aws: "AWS EC2 API" {
+  style.fill: "#fff7ed"
+  style.stroke: "#f97316"
+}
+verify: "Provider re-read\nCOMPLIANT or BLOCKED" {
+  style.fill: "#ecfeff"
+  style.stroke: "#0891b2"
+}
+
+agent -> approval: "ASK path"
+approval -> mcp: "approved exact intent"
+agent -> mcp: "ALLOW read path"
+mcp -> gateway: "controlled action"
+gateway -> policy: "authorize"
+policy -> tool: "ALLOW only"
+tool -> aws: "exact API call"
+aws -> verify: "read current state"
+policy -> verify: "DENY => no mutation" {
+  style.stroke-dash: 4
+}

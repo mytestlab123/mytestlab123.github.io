@@ -1,35 +1,32 @@
 ---
 title: Nextflow Offline
-description: Project landing page for repeatable offline-emulation of pinned nf-core pipelines using exact image discovery, private ECR, and network-none execution.
+description: Curated lessons for repeatable offline emulation of pinned nf-core pipelines using exact dependency discovery, private images, relocated runtime, and layered evidence.
 ---
 
 ## 🧬 What this project explores
 
-A repeatable way to prepare pinned Nextflow/nf-core workflows online and then prove that a relocated runtime can execute using only prepared workflow data, plugin state, and mirrored private container images.
+A repeatable way to prepare a pinned Nextflow/nf-core workflow online and then prove that a **relocated runtime** can execute using prepared workflow data, plugin state, and mirrored container images without runtime pulls or task networking.
 
-```text
-pipeline descriptor
-  → online workflow/data/plugin discovery
-  → exact image manifest
-  → Skopeo copy to private ECR
-  → generated Nextflow ECR overrides
-  → relocated Podman offline-emulation runtime
-```
+The project is careful about language: this proves **offline emulation on an online host**, not that the host is physically air-gapped.
+
+## 📚 Read this project as four patterns
+
+1. [**Offline architecture**](/kb/nextflow-offline/architecture/) — descriptor → discovery → exact images → private registry → relocated runtime.
+2. [**Image discovery & mirroring**](/kb/nextflow-offline/image-discovery-mirroring/) — discover exact container references and distribute them with Skopeo.
+3. [**Offline runtime contract**](/kb/nextflow-offline/offline-runtime/) — bundle-local Nextflow state, fresh Podman store, network disabled, pull disabled.
+4. [**Validation & evidence**](/kb/nextflow-offline/validation-evidence/) — use the cheapest proof that answers the change and distinguish emulation from true air-gap acceptance.
 
 ## Reusable themes
 
-- **Discover exact dependencies before isolation.**
-- **Mirror images registry-to-registry** rather than relying on an operator workstation cache.
-- **Relocate the prepared bundle** so success is not accidentally tied to the original build path.
-- **Disable network and pulling** at execution time to strengthen the offline proof.
-- **Name the claim precisely:** an online host with network-disabled tasks proves offline emulation, not a physically air-gapped environment.
+- Discover exact dependencies before isolation.
+- Keep pipeline onboarding data-driven through descriptors rather than copying scripts.
+- Mirror images registry-to-registry when possible.
+- Relocate the bundle so the proof is not accidentally coupled to its build path.
+- Make the offline claim match the evidence strength.
 
-:::note[Detailed extraction next]
-The next KB slice will curate pipeline architecture, image discovery/ECR mirroring, offline execution, and evidence/validation lessons.
-:::
-
-## Source
+## 🔗 Source
 
 - [Public repository](https://github.com/amitkarpe/nextflow-offline)
-- [Operator handoff](https://github.com/amitkarpe/nextflow-offline/blob/main/docs/ops/README.md)
+- [README](https://github.com/amitkarpe/nextflow-offline/blob/main/README.md)
 - [Validation strategy](https://github.com/amitkarpe/nextflow-offline/blob/main/docs/validation-strategy.md)
+- [Ops handoff](https://github.com/amitkarpe/nextflow-offline/blob/main/docs/ops/README.md)

@@ -1,0 +1,42 @@
+direction: right
+
+descriptor: "Pipeline descriptor\nname + pinned revision" {
+  style.fill: "#eef2ff"
+  style.stroke: "#4f46e5"
+}
+discovery: "Online discovery\nworkflow + data + plugins" {
+  style.fill: "#eff6ff"
+  style.stroke: "#2563eb"
+}
+manifest: "Exact image manifest\nchecksums + overrides" {
+  style.fill: "#fefce8"
+  style.stroke: "#ca8a04"
+}
+mirror: "Skopeo\nregistry -> private ECR" {
+  style.fill: "#fff7ed"
+  style.stroke: "#ea580c"
+}
+relocate: "Relocated prepared bundle\ndifferent absolute path" {
+  style.fill: "#f5f3ff"
+  style.stroke: "#7c3aed"
+}
+podman: "Fresh Podman store\npreload mapped private images" {
+  style.fill: "#ecfdf5"
+  style.stroke: "#059669"
+}
+runtime: "Nextflow offline runtime\nNXF_OFFLINE=true\nnetwork none / pull never" {
+  style.fill: "#ecfeff"
+  style.stroke: "#0891b2"
+}
+evidence: "Offline-emulation evidence\nnot physical air-gap" {
+  style.fill: "#f0fdf4"
+  style.stroke: "#16a34a"
+}
+
+descriptor -> discovery: "plan then discover"
+discovery -> manifest: "materialize exact dependencies"
+manifest -> mirror: "approved image distribution"
+mirror -> relocate: "private images ready"
+relocate -> podman: "fresh execution location"
+podman -> runtime: "preload before Nextflow"
+runtime -> evidence: "prove no runtime pull/network"
