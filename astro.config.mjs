@@ -5,18 +5,24 @@ export default defineConfig({
   site: 'https://mytestlab123.github.io',
   integrations: [
     starlight({
-      title: 'MyTestLab Engineering Lab',
-      description: 'A public learning portal for Astro, Starlight, AWS, DevOps, security, and agentic AI experiments.',
+      title: 'Amit Engineering Lab',
+      description: 'Public engineering portfolio and knowledge lab for AWS, DevSecOps, automation, agentic AI, MCP, and cloud security.',
       social: [
-        { icon: 'github', label: 'GitHub', href: 'https://github.com/mytestlab123/mytestlab123.github.io' }
+        { icon: 'github', label: 'GitHub', href: 'https://github.com/amitkarpe' }
       ],
       customCss: ['./src/styles/custom.css'],
       sidebar: [
-        { label: 'Start', items: [{ label: 'Home', slug: '' }] },
+        {
+          label: 'Explore',
+          items: [
+            { label: '🏠 Home', slug: '' },
+            { label: '🚀 Projects', slug: 'projects' }
+          ]
+        },
         {
           label: 'Lab',
           items: [
-            { label: 'Feature Lab', slug: 'lab/feature-lab' }
+            { label: '🧪 Feature Lab', slug: 'lab/feature-lab' }
           ]
         }
       ]
