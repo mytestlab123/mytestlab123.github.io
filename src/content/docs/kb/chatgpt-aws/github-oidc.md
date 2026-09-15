@@ -11,19 +11,15 @@ A CI/CD pipeline needs AWS authority, but storing a long-lived AWS access key in
 
 Use **GitHub OIDC + a repository-specific AWS role** so the workflow receives short-lived credentials only when its trust conditions match.
 
-The lab's proven workflow pattern is:
+<div class="diagram-preview">
+  <img src="/diagrams/d2/chatgpt-aws-github-oidc.svg" alt="D2 flow for GitHub Actions OIDC federation into AWS STS and a repository-scoped role" />
+</div>
+<div class="diagram-links">
+  <span>🔎 Click the diagram to zoom.</span>
+  <a href="/diagrams/d2/chatgpt-aws-github-oidc.svg" target="_blank" rel="noopener">Open full SVG ↗</a>
+</div>
 
-```text
-GitHub workflow
-   ↓ OIDC token
-AWS STS
-   ↓ short-lived assumed role
-identity preflight
-   ↓
-exact permitted AWS action
-   ↓
-provider verification
-```
+**D2 documentation view** — generated from [the `.d2` source](https://github.com/mytestlab123/mytestlab123.github.io/blob/main/diagrams/d2/chatgpt-aws-github-oidc.d2). It separates federation claims, role trust, temporary credentials, identity verification, the exact AWS action, and CloudTrail evidence.
 
 No static AWS access key is required by that path.
 
