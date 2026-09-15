@@ -1,0 +1,67 @@
+/* Diagram viewing policy: compact inline preview + click-to-zoom + full SVG escape hatch. */
+.diagram-preview {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  max-height: 34rem;
+  margin: 1.25rem 0 0.65rem;
+  padding: 1rem;
+  overflow: hidden;
+  border: 1px solid var(--portal-card-border);
+  border-radius: 1rem;
+  background: #fff;
+  box-shadow: 0 14px 38px rgba(0, 0, 0, 0.1);
+}
+
+.diagram-preview img {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: 30rem;
+  margin: 0 auto;
+  object-fit: contain;
+  cursor: zoom-in;
+}
+
+/* starlight-image-zoom may wrap the source image in an accessible button. */
+.diagram-preview button {
+  display: grid;
+  place-items: center;
+  max-width: 100%;
+  max-height: 100%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: zoom-in;
+}
+
+.diagram-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+  margin: 0 0 1.2rem;
+  color: var(--portal-muted);
+  font-size: 0.82rem;
+}
+
+.diagram-links a {
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.diagram-links a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 50rem) {
+  .diagram-preview {
+    max-height: 27rem;
+    padding: 0.65rem;
+  }
+
+  .diagram-preview img {
+    max-height: 24rem;
+  }
+}
