@@ -1,61 +1,60 @@
 # Specification
 
-Status: DRAFT
-Context: `<PERSONAL | WORK>`
-Environment: `<LOCAL | LAB | DEV | NONPROD | PROD>`
+Status: ACTIVE
+Context: `PERSONAL`
+Environment: `LAB`
 
 ## Objective
 
-Describe the problem and intended result.
+Use `mytestlab123.github.io` as a safe Astro + Starlight learning portal before changing the real `amitkarpe.github.io` knowledge portal.
 
 ## Outcome
 
-Describe the usable milestone/release package to deliver.
+A public GitHub Pages site with a minimal portfolio-style homepage, Starlight navigation/search, one Feature Lab page, and a working GitHub Actions build/deploy path.
 
 ## Authorized
 
-List the actions that may proceed without repeated approval while this SPEC is ACTIVE and the owning Issue/instruction remains in scope.
-
-For `PERSONAL` + `LAB`/`DEV`, explicitly authorized deterministic work may include repo-owned implementation, deployment, cloud resource creation/mutation, validation, reset, and cleanup without asking resource-by-resource.
-
-For `WORK` and especially `PROD`, grant only the bounded authority actually intended. Read-only investigation may be standing authority when explicitly stated; mutation requires proportionate approval in this SPEC or the current user instruction.
-
-Repository visibility is not an authority signal. Private does not mean personal; public does not mean unrestricted.
+- Modify only this repository for the current milestone.
+- Add/update Astro, Starlight, Markdown/MDX, CSS, and GitHub Actions files required for the prototype.
+- Build, validate, deploy, and fix routine compatibility issues inside this PERSONAL/LAB scope.
+- Update repo control files so future sessions can continue from GitHub truth.
 
 ## MUST
 
-- List required behavior and acceptance-critical invariants.
+- Preserve the root URL `https://mytestlab123.github.io/`.
+- Keep the implementation static-first and GitHub Pages compatible.
+- Prefer Astro + Starlight built-ins before plugins.
+- Demonstrate portfolio + KB structure, not just a generic docs starter.
+- Keep public content sanitized and generic.
+- Validate the PR build and the deployed site.
 
 ## MUST NOT
 
-- List hard scope, security, data, publication, production, destructive, or cost boundaries.
+- Modify `amitkarpe/amitkarpe.github.io` during this experiment.
+- Publish secrets, internal/customer material, private infrastructure identifiers, raw logs, or copied repositories.
+- Add optional blog, comments, AI assistant, MCP backend, analytics, or large plugin stacks in v1.
+- Introduce a server runtime for the GitHub Pages milestone.
 
 ## Phases / Milestones
 
-Group related work into a cohesive useful package, normally several tightly coupled tasks or 2-3 phases sharing one outcome and trust boundary.
-
-- Phase 1: `<outcome>`
-- Phase 2: `<outcome>`
-- Phase 3: `<outcome>`
-
-Do not stop between routine approved phases merely to request permission again.
+- Phase 1: Astro + Starlight foundation and GitHub Pages workflow.
+- Phase 2: portfolio-style homepage + Feature Lab using core components.
+- Phase 3: validate CI and live deployment; record lessons for the final portal decision.
 
 ## Verification
 
-State the smallest meaningful proof: focused tests/checks, runtime/provider readback, user-path validation, and cleanup/retention state when applicable.
+- GitHub Actions PR build succeeds.
+- `astro build` produces the static site through CI.
+- After merge, Pages deployment succeeds and `https://mytestlab123.github.io/` loads.
+- Homepage and Feature Lab routes are reachable.
 
 ## Stop Gates
 
-Stop and ask only when required by a real boundary, for example:
-
-- target repository/account/environment does not match the approved scope;
-- work would enter PROD or another higher-risk environment without authority;
-- destructive/non-recoverable data loss, credential/secret mutation, public exposure, or material cost is not explicitly approved;
-- implementation would materially widen architecture, security/trust boundary, or external integration beyond the milestone;
-- required validation fails or current state is ambiguous/unsafe.
-
-Technical failure remains a blocker even when mutation is otherwise authorized.
+Stop only if repository identity changes, GitHub Pages requires unsupported administrative access, a public-safety concern appears, or the framework requires a material architecture change outside this static LAB scope.
 
 ## Acceptance
 
-List concise conditions that make the whole milestone reviewable and complete.
+- Issue #1 has one cohesive implementation PR.
+- PR build passes.
+- Live site works at the root organization Pages URL.
+- Amit can visually evaluate the homepage and Feature Lab before any work begins on `amitkarpe.github.io`.
