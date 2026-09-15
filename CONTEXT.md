@@ -20,23 +20,25 @@ Status: ACTIVE
 - The polished portfolio design is the current visual baseline.
 - `/kb/` is a first-class Starlight navigation area with curated project knowledge.
 - Detailed KB extraction is live for AWS Compliance Agent, AgentGuard, and ChatGPT AWS Lab: four articles per project, 12 detailed articles total.
-- Diagram policy is now proven selectively: **D2 for maintainable documentation diagrams** and **AWS Architecture Diagram v3.1 / draw.io style for showcase architecture**.
-- Three real KB pages now use D2: AWS Compliance Agent architecture, AgentGuard trust model, and ChatGPT AWS operating model.
+- Diagram policy is selective: **D2 for maintainable documentation diagrams** and **AWS Architecture Diagram v3.1 / draw.io style for showcase architecture**.
+- Three real KB pages currently use D2: AWS Compliance Agent architecture, AgentGuard trust model, and ChatGPT AWS operating model.
 - GitHub Actions installs pinned D2 v0.9.0, verifies its SHA-256, renders local SVGs, then builds Astro/Starlight. No remote diagram service is required at runtime.
+- `starlight-image-zoom` 0.16.0 is enabled for documentation images.
+- Current diagram UX: compact centered inline preview, click-to-zoom/lightbox, plus explicit `Open full SVG` link for detailed inspection.
 - AWS Compliance Agent architecture also includes a reviewed draw.io-style showcase SVG plus a canonical JSON diagram spec.
 - D2 usage-learning count: **3 real documentation uses**. After 4–5 real uses, summarize lessons and create a D2-skill intake issue in `amitkarpe/skills`.
 - AgentCore AI Platform, SecCop, and Nextflow Offline remain staged for a later detailed extraction pass.
 
 ## Active Work
 
-- Issue: #6 — completed after D2/draw.io live validation.
-- PR: #7 — merged (`66bc14722f6141c2502a3e8c30982614b9c0fe76`).
-- Current milestone: Amit visual review of the three diagram-enhanced KB pages.
+- Issue #8 — completed: compact diagram previews + click-to-zoom.
+- PR #9 — merged (`fdf24340cfa2729ec43575b0668d27a0ad7b38d8`).
+- Current milestone: visual review of the new compact/zoom diagram UX.
 - Blocker: none.
 
 ## Next Action
 
-- Review the live AWS Compliance Agent, AgentGuard, and ChatGPT AWS diagram pages. If the D2 style is accepted, use D2 on 1–2 more genuine KB diagrams; then create the planned reusable D2-skill intake issue in `amitkarpe/skills` with lessons from 4–5 uses.
+- Review the three live diagram pages. If the UX is accepted, add D2 to 1–2 more genuine KB pages to reach 4–5 real uses, summarize the lessons, then create the planned reusable D2-skill intake issue in `amitkarpe/skills`.
 
 ## Restart
 
