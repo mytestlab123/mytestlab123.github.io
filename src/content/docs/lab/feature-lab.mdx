@@ -1,0 +1,106 @@
+---
+title: Feature Lab
+description: A compact visual test of the Starlight authoring features we may reuse in the final engineering portal.
+---
+
+import { Card, CardGrid, FileTree, Steps, Tabs, TabItem } from '@astrojs/starlight/components';
+
+This page is a deliberate **component playground**. It tests useful documentation patterns before we decide what belongs in the real portal.
+
+## Cards
+
+<CardGrid>
+  <Card title="AWS & DevOps" icon="cloud">
+    Architecture, operations, IAM/OIDC, automation, Terraform, and troubleshooting.
+  </Card>
+  <Card title="Cloud Security" icon="shield-check">
+    Remediation patterns, approval gates, evidence, least privilege, and governance.
+  </Card>
+  <Card title="Agentic AI" icon="robot">
+    AgentCore, MCP, tools, policy boundaries, human approval, and controlled automation.
+  </Card>
+</CardGrid>
+
+## Tabs
+
+<Tabs>
+  <TabItem label="GitHub OIDC">
+    Prefer short-lived cloud credentials issued through OIDC instead of storing long-lived AWS access keys in GitHub.
+  </TabItem>
+  <TabItem label="MCP">
+    Treat tools as explicit capabilities. Keep sensitive mutations behind clear authorization and policy boundaries.
+  </TabItem>
+  <TabItem label="Operations">
+    Document the observable workflow: trigger → validation → change → verification → evidence.
+  </TabItem>
+</Tabs>
+
+## Callouts
+
+:::tip[Reusable pattern]
+Explain **why** a pattern exists before showing configuration details.
+:::
+
+:::caution[Security boundary]
+Public examples must use sanitized account IDs, ARNs, hostnames, IP addresses, screenshots, and logs.
+:::
+
+:::note[Learning decision]
+This first milestone intentionally avoids optional plugins. We want to understand the core framework before expanding it.
+:::
+
+## Steps
+
+<Steps>
+1. Start with the engineering problem.
+2. Show the architecture or workflow.
+3. Explain the important decisions and trust boundaries.
+4. Add focused code or configuration examples.
+5. Finish with validation, lessons learned, and links to safe public evidence.
+</Steps>
+
+## File tree
+
+<FileTree>
+- src/
+  - content/
+    - docs/
+      - index.mdx
+      - lab/
+        - feature-lab.mdx
+  - styles/
+    - custom.css
+- astro.config.mjs
+- package.json
+</FileTree>
+
+## Code presentation
+
+```yaml title="github-actions-oidc.yml" {5-7}
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+```
+
+```hcl title="trust-policy.tf" ins={4} del={3}
+condition {
+  test     = "StringEquals"
+  variable = "token.actions.githubusercontent.com:aud"
+  values   = ["sts.amazonaws.com"]
+}
+```
+
+## What comes next?
+
+The next experiment should be chosen from actual need, not because a plugin exists. Good candidates are:
+
+- Mermaid architecture/workflow diagrams
+- tags and taxonomy
+- image zoom for architecture/screenshots
+- AI-friendly `llms.txt` / Markdown output
+
+The final `amitkarpe.github.io` portal should adopt only features that improve **portfolio storytelling, knowledge discovery, or maintainability**.
