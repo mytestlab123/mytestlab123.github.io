@@ -1,5 +1,6 @@
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
+import starlightImageZoom from 'starlight-image-zoom';
 
 export default defineConfig({
   site: 'https://mytestlab123.github.io',
@@ -10,7 +11,8 @@ export default defineConfig({
       social: [
         { icon: 'github', label: 'GitHub', href: 'https://github.com/amitkarpe' }
       ],
-      customCss: ['./src/styles/custom.css'],
+      plugins: [starlightImageZoom()],
+      customCss: ['./src/styles/custom.css', './src/styles/diagrams.css'],
       sidebar: [
         {
           label: 'Explore',

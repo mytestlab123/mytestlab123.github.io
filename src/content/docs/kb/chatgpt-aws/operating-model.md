@@ -13,7 +13,13 @@ The lab tests a hybrid model that uses each path for what it does best.
 
 > **MCP discovers and verifies; Git/IaC declares; OIDC CI/CD applies.**
 
-![D2 operating model for ChatGPT, AWS MCP, Git, OIDC, and provider verification](/diagrams/d2/chatgpt-aws-operating-model.svg)
+<div class="diagram-preview">
+  <img src="/diagrams/d2/chatgpt-aws-operating-model.svg" alt="D2 operating model for ChatGPT, AWS MCP, Git, OIDC, and provider verification" />
+</div>
+<div class="diagram-links">
+  <span>🔎 Click the diagram to zoom.</span>
+  <a href="/diagrams/d2/chatgpt-aws-operating-model.svg" target="_blank" rel="noopener">Open full SVG ↗</a>
+</div>
 
 **D2 documentation view** — generated from [the `.d2` source](https://github.com/mytestlab123/mytestlab123.github.io/blob/main/diagrams/d2/chatgpt-aws-operating-model.d2). This is a good D2 use case because the relationships change more often than the overall site design and should stay easy for AI/Codex to edit as text.
 

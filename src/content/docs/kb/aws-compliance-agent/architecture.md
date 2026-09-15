@@ -13,7 +13,13 @@ The project therefore separates the workflow into independent layers instead of 
 
 **Reasoning, authorization, execution, and verification are different responsibilities.**
 
-![D2 documentation flow for the AWS Compliance Agent](/diagrams/d2/aws-compliance-architecture.svg)
+<div class="diagram-preview">
+  <img src="/diagrams/d2/aws-compliance-architecture.svg" alt="D2 documentation flow for the AWS Compliance Agent" />
+</div>
+<div class="diagram-links">
+  <span>🔎 Click the diagram to zoom.</span>
+  <a href="/diagrams/d2/aws-compliance-architecture.svg" target="_blank" rel="noopener">Open full SVG ↗</a>
+</div>
 
 **D2 documentation view** — text-first, generated during the GitHub Pages build from [the `.d2` source](https://github.com/mytestlab123/mytestlab123.github.io/blob/main/diagrams/d2/aws-compliance-architecture.d2).
 
@@ -21,7 +27,13 @@ AWS Config then converges independently after the provider state changes.
 
 ## 🎨 Showcase architecture
 
-![AWS Compliance Agent governed remediation showcase](/diagrams/showcase/aws-compliance-governed-remediation.svg)
+<div class="diagram-preview">
+  <img src="/diagrams/showcase/aws-compliance-governed-remediation.svg" alt="AWS Compliance Agent governed remediation showcase" />
+</div>
+<div class="diagram-links">
+  <span>🔎 Click the diagram to zoom.</span>
+  <a href="/diagrams/showcase/aws-compliance-governed-remediation.svg" target="_blank" rel="noopener">Open full SVG ↗</a>
+</div>
 
 This second view intentionally uses the **AWS Architecture Diagram v3.1 / draw.io style** for a portfolio-grade overview: larger stage grouping, stronger visual hierarchy, and more deliberate presentation than the compact documentation diagram.
 
