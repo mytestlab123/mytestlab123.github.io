@@ -1,34 +1,35 @@
 # Context
 
-Status: NOT_INITIALIZED
+Status: ACTIVE
 
-> `CONTEXT.md` is current-only restart state. Do not keep milestone history, old resource IDs, completed plans, or chat transcripts here. Use Git history, closed Issues/PRs, or `docs/history/` for history.
+> `CONTEXT.md` is current-only restart state. Keep completed history in Git history and closed Issues/PRs.
 
 ## Project Identity
 
-- Project: `<project name>`
-- Primary Repository: `<owner/repo>`
-- Primary Directory: `<optional local path>`
-- Authorized Related Repositories: `<optional list>`
+- Project: MyTestLab Engineering Lab
+- Primary Repository: `mytestlab123/mytestlab123.github.io`
+- Live Target: `https://mytestlab123.github.io/`
+- Context: PERSONAL
+- Environment: LAB
 
 ## Current Truth
 
-- Repository created from `repo-starter`.
-- Initialization interview not yet completed.
+- This repository is the safe learning/prototype site for Astro + Starlight.
+- The real `amitkarpe.github.io` portal must remain untouched during this experiment.
+- The first implementation uses only Astro + Starlight core capabilities plus minimal CSS.
+- Optional plugins and AI/MCP features are deferred until the base authoring/deployment model is proven.
 
 ## Active Work
 
-- Issue: `<none>`
-- PR: `<none>`
-- Current milestone: `<none>`
-- Blocker: `<none>`
+- Issue: #1 — Astro + Starlight learning portal v1
+- PR: pending on branch `issue-1-astro-starlight-v1`
+- Current milestone: build and validate a minimal portfolio + KB prototype on GitHub Pages.
+- Blocker: none known; CI/build and Pages deployment still need validation.
 
 ## Next Action
 
-- Run the short `INIT.md` interview, then update project identity, `SPEC.md`, `ENV.md`, README purpose, and the first useful milestone.
+- Open the implementation PR, validate the GitHub Actions build, fix any Astro/Starlight compatibility issues, then merge and validate the live Pages URL.
 
 ## Restart
 
-A fresh ChatGPT session should normally need only:
-
-`@GitHub Read AGENTS.md, CONTEXT.md, active Issue/PR and continue.`
+`@GitHub Read AGENTS.md, CONTEXT.md, Issue #1 and active PR in mytestlab123/mytestlab123.github.io, then continue.`
