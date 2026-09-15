@@ -6,7 +6,7 @@ const projects = [
     title: 'AWS Compliance Agent',
     summary:
       'Governed AWS compliance remediation: AWS Config detects, AI explains and plans, a human approves, AgentCore policy governs exact tools, and provider readback verifies the result.',
-    href: 'https://github.com/amitkarpe/aws-secops',
+    href: '/kb/aws-compliance-agent/',
     tags: ['AWS Config', 'AgentCore', 'Human approval'],
   },
   {
@@ -15,7 +15,7 @@ const projects = [
     title: 'AgentCore AI Platform POC',
     summary:
       'A small internal AI-platform proof for project keys, approved-model access, explicit allow/deny policy, audit logs, and native Bedrock credential experiments.',
-    href: 'https://github.com/mytestlab123/AgentCore',
+    href: '/kb/agentcore-ai-platform/',
     tags: ['Bedrock', 'IAM', 'React'],
   },
   {
@@ -24,7 +24,7 @@ const projects = [
     title: 'AgentGuard',
     summary:
       'A trust-layer demo for sensitive AI actions with ALLOW / DENY / APPROVAL REQUIRED decisions, typed proposals, replay and drift protection, and approval-bypass denial.',
-    href: 'https://github.com/mytestlab123/agentguard',
+    href: '/kb/agentguard/',
     tags: ['Policy engine', 'AWS WAF', 'HITL'],
   },
   {
@@ -33,7 +33,7 @@ const projects = [
     title: 'SecCop',
     summary:
       'A secure operator workflow across EC2, S3, and ECR that keeps provider evidence deterministic, requires human approval for remediation, and verifies outcomes after execution.',
-    href: 'https://github.com/mytestlab123/agentic-ai-cybersecurity-lab',
+    href: '/kb/seccop/',
     tags: ['SSM', 'EC2 / S3 / ECR', 'Agent security'],
   },
   {
@@ -42,7 +42,7 @@ const projects = [
     title: 'ChatGPT AWS Lab',
     summary:
       'A public operating model where MCP inspects and verifies, Git/IaC declares infrastructure, and GitHub Actions with OIDC performs bounded AWS changes without long-lived CI credentials.',
-    href: 'https://github.com/mytestlab123/chatgpt-aws',
+    href: '/kb/chatgpt-aws/',
     tags: ['MCP', 'OIDC', 'Terraform'],
   },
   {
@@ -51,7 +51,7 @@ const projects = [
     title: 'Nextflow Offline',
     summary:
       'Repeatable offline-emulation for pinned nf-core pipelines: discover exact images, mirror them with Skopeo to private ECR, generate overrides, and prove network-none Podman execution.',
-    href: 'https://github.com/amitkarpe/nextflow-offline',
+    href: '/kb/nextflow-offline/',
     tags: ['Nextflow', 'Private ECR', 'Podman'],
   },
 ];
@@ -59,10 +59,10 @@ const projects = [
 
 <div class="portfolio-project-grid">
   {projects.map((project) => (
-    <a class="portfolio-project-card" href={project.href} target="_blank" rel="noreferrer">
+    <a class="portfolio-project-card" href={project.href}>
       <div class="portfolio-project-card__top">
         <span class="portfolio-project-card__emoji" aria-hidden="true">{project.emoji}</span>
-        <span class="portfolio-project-card__arrow" aria-hidden="true">↗</span>
+        <span class="portfolio-project-card__arrow" aria-hidden="true">→</span>
       </div>
       <div class="portfolio-project-card__eyebrow">{project.eyebrow}</div>
       <h3>{project.title}</h3>

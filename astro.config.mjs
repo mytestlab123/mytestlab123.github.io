@@ -16,7 +16,46 @@ export default defineConfig({
           label: 'Explore',
           items: [
             { label: '🏠 Home', slug: '' },
-            { label: '🚀 Projects', slug: 'projects' }
+            { label: '🚀 Projects', slug: 'projects' },
+            { label: '📚 Knowledge Base', slug: 'kb' }
+          ]
+        },
+        {
+          label: '📚 Knowledge Base',
+          items: [
+            {
+              label: '🛡️ AWS Compliance Agent',
+              items: [
+                { label: 'Overview', slug: 'kb/aws-compliance-agent' },
+                { label: 'Architecture', slug: 'kb/aws-compliance-agent/architecture' },
+                { label: 'Authorization Boundary', slug: 'kb/aws-compliance-agent/authorization-boundary' },
+                { label: 'Remediation & Verification', slug: 'kb/aws-compliance-agent/remediation-verification' },
+                { label: 'Reliability Lessons', slug: 'kb/aws-compliance-agent/reliability-lessons' }
+              ]
+            },
+            {
+              label: '🔐 AgentGuard',
+              items: [
+                { label: 'Overview', slug: 'kb/agentguard' },
+                { label: 'Trust Model', slug: 'kb/agentguard/trust-model' },
+                { label: 'Decision Model', slug: 'kb/agentguard/decision-model' },
+                { label: 'Approval, Replay & Drift', slug: 'kb/agentguard/approval-replay-drift' },
+                { label: 'Read-only to Mutation', slug: 'kb/agentguard/read-only-to-mutation' }
+              ]
+            },
+            {
+              label: '🔗 ChatGPT AWS Lab',
+              items: [
+                { label: 'Overview', slug: 'kb/chatgpt-aws' },
+                { label: 'Operating Model', slug: 'kb/chatgpt-aws/operating-model' },
+                { label: 'GitHub OIDC', slug: 'kb/chatgpt-aws/github-oidc' },
+                { label: 'MCP vs CI/CD', slug: 'kb/chatgpt-aws/mcp-vs-cicd' },
+                { label: 'Public Repo Security', slug: 'kb/chatgpt-aws/public-repo-security' }
+              ]
+            },
+            { label: '🧠 AgentCore AI Platform', slug: 'kb/agentcore-ai-platform' },
+            { label: '🤖 SecCop', slug: 'kb/seccop' },
+            { label: '🧬 Nextflow Offline', slug: 'kb/nextflow-offline' }
           ]
         },
         {
