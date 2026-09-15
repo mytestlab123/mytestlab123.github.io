@@ -11,6 +11,16 @@ AgentGuard makes the decision explicit.
 
 ## 🚦 Three states
 
+<div class="diagram-preview">
+  <img src="/diagrams/d2/agentguard-decision-model.svg" alt="D2 decision flow showing AgentGuard ALLOW, DENY, and APPROVAL REQUIRED paths" />
+</div>
+<div class="diagram-links">
+  <span>🔎 Click the diagram to zoom.</span>
+  <a href="/diagrams/d2/agentguard-decision-model.svg" target="_blank" rel="noopener">Open full SVG ↗</a>
+</div>
+
+**D2 documentation view** — generated from [the `.d2` source](https://github.com/mytestlab123/mytestlab123.github.io/blob/main/diagrams/d2/agentguard-decision-model.d2). The visual makes the three policy outcomes and the extra approval/revalidation path materially different rather than presenting them as similar chat messages.
+
 ### `ALLOW`
 
 Used for a safe read operation in the designed flow.
@@ -70,24 +80,7 @@ That makes a blocked or incomplete stage visually different from a successful on
 
 ## 🔐 Policy does not trust free-form action text
 
-The designed mutation path is narrow:
-
-```text
-LLM recommendation
-      ↓
-typed proposal validation
-      ↓
-deterministic policy
-      ├─ DENY
-      ├─ ALLOW (read only)
-      └─ APPROVAL REQUIRED
-              ↓
-         human approval
-              ↓
-     proposal revalidation
-              ↓
-        narrow executor
-```
+The designed mutation path is narrow: the LLM recommendation becomes a typed proposal, deterministic policy decides the state, human approval is required for a sensitive change, the exact proposal is revalidated, and only then can a narrow executor run.
 
 The model is specifically not allowed to send arbitrary WebACL JSON directly to a mutation executor.
 
