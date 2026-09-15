@@ -11,6 +11,7 @@
   "dependencies": {
     "@astrojs/starlight": "latest",
     "astro": "latest",
-    "starlight-image-zoom": "0.16.0"
+    "starlight-image-zoom": "0.16.0",
+    "starlight-view-modes": "0.13.1"
   }
 }

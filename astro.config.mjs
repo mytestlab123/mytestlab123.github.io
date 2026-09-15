@@ -1,6 +1,7 @@
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 import starlightImageZoom from 'starlight-image-zoom';
+import starlightViewModes from 'starlight-view-modes';
 
 export default defineConfig({
   site: 'https://mytestlab123.github.io',
@@ -11,7 +12,14 @@ export default defineConfig({
       social: [
         { icon: 'github', label: 'GitHub', href: 'https://github.com/amitkarpe' }
       ],
-      plugins: [starlightImageZoom()],
+      plugins: [
+        starlightImageZoom(),
+        starlightViewModes({
+          zenModeSettings: {
+            keyboardShortcut: ['Ctrl+Shift+Z']
+          }
+        })
+      ],
       customCss: ['./src/styles/custom.css', './src/styles/diagrams.css'],
       sidebar: [
         {
