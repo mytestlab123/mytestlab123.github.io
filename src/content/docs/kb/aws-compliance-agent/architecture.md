@@ -13,27 +13,21 @@ The project therefore separates the workflow into independent layers instead of 
 
 **Reasoning, authorization, execution, and verification are different responsibilities.**
 
-```text
-AWS Config
-   ↓ compliance evidence
-AWS Compliance Agent
-   ↓ read / explain / plan
-Server-owned planner + retained manifests
-   ↓ exact family + immutable batch
-Human Approve / Reject
-   ↓ approved exact intent
-AgentCore Gateway
-   ↓
-AgentCore Policy — ALLOW / DENY
-   ↓
-Exact family tool
-   ↓
-AWS API
-   ↓
-Direct provider readback
-```
+![D2 documentation flow for the AWS Compliance Agent](/diagrams/d2/aws-compliance-architecture.svg)
+
+**D2 documentation view** — text-first, generated during the GitHub Pages build from [the `.d2` source](https://github.com/mytestlab123/mytestlab123.github.io/blob/main/diagrams/d2/aws-compliance-architecture.d2).
 
 AWS Config then converges independently after the provider state changes.
+
+## 🎨 Showcase architecture
+
+![AWS Compliance Agent governed remediation showcase](/diagrams/showcase/aws-compliance-governed-remediation.svg)
+
+This second view intentionally uses the **AWS Architecture Diagram v3.1 / draw.io style** for a portfolio-grade overview: larger stage grouping, stronger visual hierarchy, and more deliberate presentation than the compact documentation diagram.
+
+:::note[Why keep both?]
+Use **D2 for maintainable documentation flows** and reserve **draw.io showcase diagrams** for the smaller number of pages where presentation quality matters enough to justify the additional source/review workflow. This SVG is a reviewed skill preview artefact; exact draw.io Desktop export remains a separate production-grade step.
+:::
 
 ## 🏗️ Responsibility by layer
 
