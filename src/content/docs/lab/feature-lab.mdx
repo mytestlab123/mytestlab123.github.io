@@ -5,37 +5,39 @@ description: A compact visual test of the Starlight authoring features we may re
 
 import { Card, CardGrid, FileTree, Steps, Tabs, TabItem } from '@astrojs/starlight/components';
 
+# 🧪 Feature Lab
+
 This page is a deliberate **component playground**. It tests useful documentation patterns before we decide what belongs in the real portal.
 
-## Cards
+## 🧩 Cards
 
 <CardGrid>
-  <Card title="AWS & DevOps" icon="cloud">
+  <Card title="☁️ AWS & DevOps" icon="cloud">
     Architecture, operations, IAM/OIDC, automation, Terraform, and troubleshooting.
   </Card>
-  <Card title="Cloud Security" icon="shield-check">
+  <Card title="🛡️ Cloud Security" icon="shield-check">
     Remediation patterns, approval gates, evidence, least privilege, and governance.
   </Card>
-  <Card title="Agentic AI" icon="robot">
+  <Card title="🤖 Agentic AI" icon="robot">
     AgentCore, MCP, tools, policy boundaries, human approval, and controlled automation.
   </Card>
 </CardGrid>
 
-## Tabs
+## 📑 Tabs
 
 <Tabs>
-  <TabItem label="GitHub OIDC">
+  <TabItem label="🔐 GitHub OIDC">
     Prefer short-lived cloud credentials issued through OIDC instead of storing long-lived AWS access keys in GitHub.
   </TabItem>
-  <TabItem label="MCP">
+  <TabItem label="🧩 MCP">
     Treat tools as explicit capabilities. Keep sensitive mutations behind clear authorization and policy boundaries.
   </TabItem>
-  <TabItem label="Operations">
+  <TabItem label="⚙️ Operations">
     Document the observable workflow: trigger → validation → change → verification → evidence.
   </TabItem>
 </Tabs>
 
-## Callouts
+## 💡 Callouts
 
 :::tip[Reusable pattern]
 Explain **why** a pattern exists before showing configuration details.
@@ -46,10 +48,28 @@ Public examples must use sanitized account IDs, ARNs, hostnames, IP addresses, s
 :::
 
 :::note[Learning decision]
-This first milestone intentionally avoids optional plugins. We want to understand the core framework before expanding it.
+This milestone still avoids optional plugin sprawl. We are proving the visual and authoring model first.
 :::
 
-## Steps
+## 🔄 Workflow storytelling
+
+```text
+🔎 Detect
+   ↓
+🧠 Explain + plan
+   ↓
+🙋 Human approval
+   ↓
+⚙️ Narrow deterministic tool
+   ↓
+✅ Provider verification
+   ↓
+📦 Evidence
+```
+
+The portal should make the **control path** obvious before asking the reader to study implementation details.
+
+## ✅ Steps
 
 <Steps>
 1. Start with the engineering problem.
@@ -59,13 +79,18 @@ This first milestone intentionally avoids optional plugins. We want to understan
 5. Finish with validation, lessons learned, and links to safe public evidence.
 </Steps>
 
-## File tree
+## 🌳 File tree
 
 <FileTree>
 - src/
+  - components/
+    - PortfolioHome.astro
+    - ProjectGrid.astro
   - content/
     - docs/
       - index.mdx
+      - projects/
+        - index.mdx
       - lab/
         - feature-lab.mdx
   - styles/
@@ -74,7 +99,7 @@ This first milestone intentionally avoids optional plugins. We want to understan
 - package.json
 </FileTree>
 
-## Code presentation
+## 💻 Code presentation
 
 ```yaml title="github-actions-oidc.yml" {5-7}
 permissions:
@@ -94,7 +119,7 @@ condition {
 }
 ```
 
-## What comes next?
+## 🔭 What comes next?
 
 The next experiment should be chosen from actual need, not because a plugin exists. Good candidates are:
 
