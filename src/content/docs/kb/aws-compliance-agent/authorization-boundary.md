@@ -1,6 +1,6 @@
 ---
 title: Why the AI Does Not Authorize AWS Changes
-description: The AWS Compliance Agent governance model: server-owned scope, family-specific approval, independent Policy, exact tools, and provider verification.
+description: "The AWS Compliance Agent governance model: server-owned scope, family-specific approval, independent Policy, exact tools, and provider verification."
 ---
 
 ## 🎯 Problem

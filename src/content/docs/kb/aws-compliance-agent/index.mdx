@@ -1,6 +1,6 @@
 ---
 title: AWS Compliance Agent
-description: Curated knowledge from the public aws-secops project: detection, approval, AgentCore policy, exact tools, and provider verification.
+description: "Curated knowledge from the public aws-secops project: detection, approval, AgentCore policy, exact tools, and provider verification."
 ---
 
 import { Card, CardGrid } from '@astrojs/starlight/components';
@@ -10,16 +10,16 @@ import { Card, CardGrid } from '@astrojs/starlight/components';
 The central design separates **reasoning, authorization, execution, and verification**. AWS Config supplies compliance evidence; the agent explains and plans; server-owned logic binds exact scope; human approval and AgentCore Policy gate execution; direct provider readback determines whether the change actually succeeded.
 
 <CardGrid>
-  <Card title="🏗️ Architecture" icon="flow">
+  <Card title="🏗️ Architecture">
     [From AWS Config evidence to an exact, provider-verified remediation path.](/kb/aws-compliance-agent/architecture/)
   </Card>
-  <Card title="🔐 Authorization boundary" icon="lock">
+  <Card title="🔐 Authorization boundary">
     [Why the model is an assistant rather than the AWS authorization boundary.](/kb/aws-compliance-agent/authorization-boundary/)
   </Card>
-  <Card title="✅ Remediation & verification" icon="success">
+  <Card title="✅ Remediation & verification">
     [How S3 and Security Group families are prepared, approved, executed, and verified independently.](/kb/aws-compliance-agent/remediation-verification/)
   </Card>
-  <Card title="🧯 Reliability lessons" icon="warning">
+  <Card title="🧯 Reliability lessons">
     [Bounded reads, UNKNOWN state, safe terminalization, reconciliation, and fresh approval after uncertainty.](/kb/aws-compliance-agent/reliability-lessons/)
   </Card>
 </CardGrid>

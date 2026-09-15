@@ -1,6 +1,6 @@
 ---
 title: Operating Model — Fast Inspection, Durable Delivery
-description: The hybrid ChatGPT + AWS pattern: MCP for live inspection and verification, Git/IaC for desired state, and OIDC CI/CD for controlled application.
+description: "The hybrid ChatGPT + AWS pattern: MCP for live inspection and verification, Git/IaC for desired state, and OIDC CI/CD for controlled application."
 ---
 
 ## 🎯 Problem

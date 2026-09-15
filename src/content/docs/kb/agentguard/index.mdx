@@ -1,6 +1,6 @@
 ---
 title: AgentGuard
-description: Curated knowledge from AgentGuard: deterministic policy, typed proposals, human approval, replay protection, and read-only AWS evidence.
+description: "Curated knowledge from AgentGuard: deterministic policy, typed proposals, human approval, replay protection, and read-only AWS evidence."
 ---
 
 import { Card, CardGrid } from '@astrojs/starlight/components';
@@ -10,16 +10,16 @@ import { Card, CardGrid } from '@astrojs/starlight/components';
 AgentGuard keeps the model away from authorization. A proposal is converted into a typed, deterministic object; policy returns an explicit decision; sensitive changes require a one-time human approval; proposal mismatch, replay, expiry, and drift fail closed.
 
 <CardGrid>
-  <Card title="🛡️ Trust model" icon="shield-check">
+  <Card title="🛡️ Trust model">
     [Where the active trust boundaries sit and why aliases and server-owned target selection matter.](/kb/agentguard/trust-model/)
   </Card>
-  <Card title="🚦 Decision model" icon="approve-check">
+  <Card title="🚦 Decision model">
     [ALLOW, DENY, and APPROVAL REQUIRED as explicit security states.](/kb/agentguard/decision-model/)
   </Card>
-  <Card title="🔁 Approval, replay & drift" icon="lock">
+  <Card title="🔁 Approval, replay & drift">
     [Immutable proposal binding, expiring one-time approval, mismatch checks, and retained security regressions.](/kb/agentguard/approval-replay-drift/)
   </Card>
-  <Card title="☁️ Read-only to mutation" icon="cloud">
+  <Card title="☁️ Read-only to mutation">
     [What the live AWS phase currently proves, and the separately designed sequence required before write authority.](/kb/agentguard/read-only-to-mutation/)
   </Card>
 </CardGrid>
