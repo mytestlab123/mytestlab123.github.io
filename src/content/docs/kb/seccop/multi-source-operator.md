@@ -1,6 +1,11 @@
 ---
 title: Multi-Source Security Operator
 description: How one SecCop operator experience can correlate server, stored-artifact, and container findings without pretending they share the same remediation capability.
+tags:
+  - aws
+  - cloud-security
+  - agentic-ai
+  - verification
 ---
 
 ## 🎯 Problem

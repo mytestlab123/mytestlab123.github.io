@@ -1,6 +1,11 @@
 ---
 title: Offline Nextflow Architecture
 description: A text-first architecture for preparing pinned nf-core dependencies online and proving a relocated no-pull, no-network runtime.
+tags:
+  - offline-computing
+  - nextflow
+  - containers
+  - verification
 ---
 
 ## 🎯 Problem

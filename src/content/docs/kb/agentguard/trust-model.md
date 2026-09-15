@@ -1,6 +1,11 @@
 ---
 title: Trust Model — Why an AI Agent Can Be Constrained
 description: AgentGuard separates observed AWS evidence, typed proposals, deterministic policy, human approval, exact execution, and verification.
+tags:
+  - agentic-ai
+  - governance
+  - identity-access
+  - verification
 ---
 
 ## 🎯 Problem
