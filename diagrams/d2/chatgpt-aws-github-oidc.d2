@@ -1,0 +1,56 @@
+direction: right
+
+workflow: "GitHub Actions\nRepository workflow" {
+  style.fill: "#F8FAFC"
+  style.stroke: "#64748B"
+  style.border-radius: 10
+}
+oidc: "GitHub OIDC token\nShort-lived federation claim" {
+  style.fill: "#F5F3FF"
+  style.stroke: "#7C3AED"
+  style.border-radius: 10
+}
+trust: "Repository-scoped role trust\nRepo + ref / environment conditions" {
+  style.fill: "#EFF6FF"
+  style.stroke: "#2563EB"
+  style.border-radius: 10
+}
+sts: "AWS STS\nAssumeRoleWithWebIdentity" {
+  style.fill: "#FFF7ED"
+  style.stroke: "#E8790C"
+  style.border-radius: 10
+}
+creds: "Short-lived role credentials\nNo static AWS access key" {
+  style.fill: "#ECFDF5"
+  style.stroke: "#059669"
+  style.border-radius: 10
+}
+identity: "STS identity preflight\nVerify expected role" {
+  style.fill: "#EFF6FF"
+  style.stroke: "#2563EB"
+  style.border-radius: 10
+}
+action: "Exact permitted AWS action\nNarrow service/resource scope" {
+  style.fill: "#F5F3FF"
+  style.stroke: "#7C3AED"
+  style.border-radius: 10
+}
+verify: "Provider verification\nRead back actual AWS state" {
+  style.fill: "#ECFDF5"
+  style.stroke: "#059669"
+  style.border-radius: 10
+}
+cloudtrail: "CloudTrail evidence\nFederation troubleshooting" {
+  style.fill: "#FFF7ED"
+  style.stroke: "#E8790C"
+  style.border-radius: 10
+}
+
+workflow -> oidc: "request token"
+oidc -> trust: "subject + audience claims"
+trust -> sts: "conditions must match"
+sts -> creds: "issue temporary credentials"
+creds -> identity: "preflight"
+identity -> action: "expected role only"
+action -> verify: "apply then read back"
+sts -> cloudtrail: "federation evidence"

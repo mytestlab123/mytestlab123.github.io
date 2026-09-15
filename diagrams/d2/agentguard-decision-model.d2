@@ -1,0 +1,64 @@
+direction: right
+
+request: "User request\nIntent only" {
+  style.fill: "#F8FAFC"
+  style.stroke: "#64748B"
+  style.border-radius: 10
+}
+proposal: "Typed proposal\nValidated schema" {
+  style.fill: "#F5F3FF"
+  style.stroke: "#7C3AED"
+  style.border-radius: 10
+}
+policy: "Deterministic policy\nAuthoritative decision" {
+  style.fill: "#EFF6FF"
+  style.stroke: "#2563EB"
+  style.border-radius: 10
+}
+allow: "ALLOW\nRead-only operation" {
+  style.fill: "#ECFDF5"
+  style.stroke: "#059669"
+  style.border-radius: 10
+}
+approval_required: "APPROVAL REQUIRED\nSensitive proposal" {
+  style.fill: "#FFF7ED"
+  style.stroke: "#E8790C"
+  style.border-radius: 10
+}
+deny: "DENY\nNo mutation" {
+  style.fill: "#FEF2F2"
+  style.stroke: "#DC2626"
+  style.border-radius: 10
+}
+human: "Human Approve / Reject\nOne exact proposal" {
+  style.fill: "#EFF6FF"
+  style.stroke: "#2563EB"
+  style.border-radius: 10
+}
+revalidate: "Proposal revalidation\nReplay + drift checks" {
+  style.fill: "#F5F3FF"
+  style.stroke: "#7C3AED"
+  style.border-radius: 10
+}
+executor: "Narrow executor\nNo arbitrary WebACL payload" {
+  style.fill: "#F5F3FF"
+  style.stroke: "#7C3AED"
+  style.border-radius: 10
+}
+verify: "Verification + audit\nAuthoritative outcome" {
+  style.fill: "#ECFDF5"
+  style.stroke: "#059669"
+  style.border-radius: 10
+}
+
+request -> proposal: "parse intent"
+proposal -> policy: "evaluate typed action"
+policy -> allow: "safe read"
+policy -> approval_required: "sensitive change"
+policy -> deny: "boundary violation"
+allow -> verify: "read result"
+approval_required -> human: "approval gate"
+human -> revalidate: "approved exact proposal"
+revalidate -> executor: "still valid"
+executor -> verify: "execute then verify"
+deny -> verify: "audit no mutation"

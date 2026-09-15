@@ -20,6 +20,16 @@ The recorded demo used **100 S3 buckets and 10 Security Groups**. This is a boun
 
 ## 🔄 Five-step operator flow
 
+<div class="diagram-preview">
+  <img src="/diagrams/d2/aws-compliance-remediation-verification.svg" alt="D2 remediation and verification flow for AWS Compliance Agent" />
+</div>
+<div class="diagram-links">
+  <span>🔎 Click the diagram to zoom.</span>
+  <a href="/diagrams/d2/aws-compliance-remediation-verification.svg" target="_blank" rel="noopener">Open full SVG ↗</a>
+</div>
+
+**D2 documentation view** — generated during the Pages build from [the `.d2` source](https://github.com/mytestlab123/mytestlab123.github.io/blob/main/diagrams/d2/aws-compliance-remediation-verification.d2). It emphasizes that S3 and Security Group families remain independently approved before the exact path converges on provider verification.
+
 ### 1. Detect
 
 AWS Config shows the compliance signal. Config can observe resources beyond the retained demo scope.
@@ -36,11 +46,8 @@ A read-only operator request can summarize compliance without calling an executo
 
 An explicit fix request can prepare the supported families. S3 and Security Group actions remain independent:
 
-```text
-Fix all
-  ├─ S3 batch → S3 Approve / Reject → S3 exact path
-  └─ SG batch → SG Approve / Reject → SG exact path
-```
+- S3 batch → S3 Approve / Reject → S3 exact path.
+- Security Group batch → SG Approve / Reject → SG exact path.
 
 ### 5. Verify progress and outcome
 
