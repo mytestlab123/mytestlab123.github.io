@@ -1,0 +1,44 @@
+direction: down
+
+browser: "Fixed browser review action" {
+  style.fill: "#F8FAFC"
+  style.stroke: "#64748B"
+  style.border-radius: 10
+}
+trusted: "Trusted deterministic boundary" {
+  style.fill: "#F8FAFC"
+  style.stroke: "#2563EB"
+  style.border-radius: 12
+  api: "Local Python API" {
+    style.fill: "#EFF6FF"
+    style.stroke: "#2563EB"
+  }
+  allowlist: "Exact target allowlist" {
+    style.fill: "#EFF6FF"
+    style.stroke: "#2563EB"
+  }
+  sanitize: "Alias-only observed state" {
+    style.fill: "#ECFDF5"
+    style.stroke: "#059669"
+  }
+  proposal: "Typed COUNT → BLOCK proposal" {
+    style.fill: "#F5F3FF"
+    style.stroke: "#7C3AED"
+  }
+  policy: "Deterministic policy" {
+    style.fill: "#FFF7ED"
+    style.stroke: "#E8790C"
+  }
+  api -> allowlist
+  allowlist -> sanitize: "AWS WAF GetWebACL only"
+  sanitize -> proposal: "sanitized evidence"
+  proposal -> policy
+}
+decision: "APPROVAL REQUIRED" {
+  shape: hexagon
+  style.fill: "#FFF7ED"
+  style.stroke: "#E8790C"
+}
+
+browser -> trusted.api: "read request"
+trusted.policy -> decision: "explicit decision"

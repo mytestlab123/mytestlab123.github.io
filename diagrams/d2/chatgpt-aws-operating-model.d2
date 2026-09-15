@@ -1,0 +1,53 @@
+direction: right
+
+agent: "ChatGPT / Agent" {
+  style.fill: "#F5F3FF"
+  style.stroke: "#7C3AED"
+  style.border-radius: 10
+}
+mcp: "AWS MCP\nInspect · diagnose · verify" {
+  style.fill: "#ECFDF5"
+  style.stroke: "#059669"
+  style.border-radius: 10
+}
+git: "Git + IaC\nDeclare desired state" {
+  style.fill: "#EFF6FF"
+  style.stroke: "#2563EB"
+  style.border-radius: 10
+}
+pr: "Pull Request\nReview change" {
+  style.fill: "#EFF6FF"
+  style.stroke: "#2563EB"
+  style.border-radius: 10
+}
+actions: "GitHub Actions\nControlled CI path" {
+  style.fill: "#F8FAFC"
+  style.stroke: "#64748B"
+  style.border-radius: 10
+}
+oidc: "GitHub OIDC\nShort-lived AWS identity" {
+  style.fill: "#FFF7ED"
+  style.stroke: "#E8790C"
+  style.border-radius: 10
+}
+aws: "AWS\nApply durable state" {
+  style.fill: "#FFF7ED"
+  style.stroke: "#E8790C"
+  style.border-radius: 10
+}
+verify: "Independent MCP readback\nVerify actual provider state" {
+  style.fill: "#ECFDF5"
+  style.stroke: "#059669"
+  style.border-radius: 10
+}
+
+agent -> mcp: "fast live path"
+agent -> git: "durable path"
+git -> pr: "encode change"
+pr -> actions: "merge / dispatch"
+actions -> oidc: "request identity"
+oidc -> aws: "bounded apply"
+aws -> verify: "provider state"
+mcp -> verify: "independent readback" {
+  style.stroke-dash: 4
+}

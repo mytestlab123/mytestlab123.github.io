@@ -1,0 +1,50 @@
+{
+  "id": "aws-compliance-governed-remediation",
+  "name": "AWS Compliance Agent Governed Remediation",
+  "title": "AWS Compliance Agent — Governed Remediation Flow",
+  "subtitle": "Detection, reasoning, human approval, policy enforcement, narrow execution, and provider verification",
+  "view_type": "workflow",
+  "architecture_type": "workflow",
+  "audience": "Public engineering portfolio readers",
+  "status": "current",
+  "source_evidence": [
+    "https://github.com/amitkarpe/aws-secops/blob/main/docs/architecture.md",
+    "https://github.com/amitkarpe/aws-secops/blob/main/docs/governance.md"
+  ],
+  "page": {"width": 1920, "height": 1080, "background": "#FFFFFF"},
+  "icon_mode": "native",
+  "edge_color_mode": "source",
+  "groups": [
+    {"id": "detect", "label": "1 Detect", "kind": "tier-panel", "geometry": [50,180,300,650], "fill": "#FFF7ED", "stroke": "#E8790C"},
+    {"id": "reason", "label": "2 Reason & Scope", "kind": "tier-panel", "geometry": [380,180,410,650], "fill": "#F5F3FF", "stroke": "#6D28D9"},
+    {"id": "govern", "label": "3 Govern", "kind": "tier-panel", "geometry": [820,180,420,650], "fill": "#EFF6FF", "stroke": "#2563EB"},
+    {"id": "execute", "label": "4 Execute", "kind": "tier-panel", "geometry": [1270,180,300,650], "fill": "#FFF7ED", "stroke": "#E8790C"},
+    {"id": "verify", "label": "5 Verify", "kind": "tier-panel", "geometry": [1600,180,270,650], "fill": "#ECFDF5", "stroke": "#059669"}
+  ],
+  "nodes": [
+    {"id": "config", "provider": "aws", "label": "AWS Config\ncompliance evidence", "variant": "label-only", "geometry": [85,365,230,110], "fill": "#FFFFFF", "stroke": "#E8790C", "accent": "#E8790C"},
+    {"id": "agent", "provider": "external", "label": "AWS Compliance Agent\nread · explain · plan", "variant": "label-only", "geometry": [420,285,330,110], "fill": "#FFFFFF", "stroke": "#6D28D9", "accent": "#6D28D9"},
+    {"id": "planner", "provider": "external", "label": "Server-owned planner\nretained manifests + exact scope", "variant": "label-only", "geometry": [420,500,330,120], "fill": "#FFFFFF", "stroke": "#6D28D9", "accent": "#6D28D9"},
+    {"id": "approval", "provider": "external", "label": "Human Approve / Reject\nexact approved intent", "variant": "label-only", "geometry": [860,245,340,110], "fill": "#FFFFFF", "stroke": "#2563EB", "accent": "#2563EB"},
+    {"id": "gateway", "provider": "aws", "label": "AgentCore Gateway\nbounded tool entry point", "variant": "label-only", "geometry": [860,410,340,110], "fill": "#FFFFFF", "stroke": "#2563EB", "accent": "#2563EB"},
+    {"id": "policy", "provider": "aws", "label": "AgentCore Policy\nALLOW / DENY", "variant": "label-only", "geometry": [860,575,340,110], "fill": "#FFFFFF", "stroke": "#2563EB", "accent": "#2563EB"},
+    {"id": "tool", "provider": "external", "label": "Exact family tool\nnarrow mutation only", "variant": "label-only", "geometry": [1305,330,230,110], "fill": "#FFFFFF", "stroke": "#E8790C", "accent": "#E8790C"},
+    {"id": "api", "provider": "aws", "label": "AWS API\napproved change", "variant": "label-only", "geometry": [1305,535,230,110], "fill": "#FFFFFF", "stroke": "#E8790C", "accent": "#E8790C"},
+    {"id": "readback", "provider": "aws", "label": "Direct provider readback\nactual state decides success", "variant": "label-only", "geometry": [1620,410,230,120], "fill": "#FFFFFF", "stroke": "#059669", "accent": "#059669"}
+  ],
+  "edges": [
+    {"id": "e1", "source": "config", "target": "agent", "caption": "compliance evidence", "kind": "event"},
+    {"id": "e2", "source": "agent", "target": "planner", "caption": "read / explain / plan", "kind": "control"},
+    {"id": "e3", "source": "planner", "target": "approval", "caption": "exact family + immutable batch", "kind": "control"},
+    {"id": "e4", "source": "approval", "target": "gateway", "caption": "approved exact intent", "kind": "control"},
+    {"id": "e5", "source": "gateway", "target": "policy", "caption": "bounded invocation", "kind": "security"},
+    {"id": "e6", "source": "policy", "target": "tool", "caption": "ALLOW only", "kind": "security"},
+    {"id": "e7", "source": "tool", "target": "api", "caption": "narrow AWS action", "kind": "request"},
+    {"id": "e8", "source": "api", "target": "readback", "caption": "verify actual state", "kind": "request"}
+  ],
+  "annotations": [
+    {"id": "principle", "text": "Reasoning, authorization, execution, and verification remain separate responsibilities. A model recommendation is never treated as AWS authorization or proof of success.", "geometry": [270,870,1380,75], "font_size": 18, "color": "#334155", "align": "center", "box": false}
+  ],
+  "legend": false,
+  "footer": "Public portfolio view · sanitized · source implementation remains authoritative in the aws-secops repository"
+}
