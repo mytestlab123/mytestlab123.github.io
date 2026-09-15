@@ -17,23 +17,9 @@ AgentGuard treats the model as a proposer. **Trusted deterministic components ow
 
 The current live AWS phase is intentionally read-only:
 
-```text
-Fixed browser review action
-        ↓
-Local Python API
-        ↓
-Server-side exact target allowlist
-        ↓
-AWS WAF GetWebACL only
-        ↓
-Alias-only observed state
-        ↓
-Typed COUNT → BLOCK proposal
-        ↓
-Deterministic policy
-        ↓
-APPROVAL REQUIRED
-```
+![D2 trust-boundary flow for AgentGuard](/diagrams/d2/agentguard-trust-model.svg)
+
+**D2 documentation view** — generated from [the `.d2` source](https://github.com/mytestlab123/mytestlab123.github.io/blob/main/diagrams/d2/agentguard-trust-model.d2). D2 is used here because the page needs a maintainable trust-flow explanation rather than a portfolio-grade architecture poster.
 
 Real resource identifiers and raw SDK errors stay server-side. The browser cannot choose AWS resources.
 
