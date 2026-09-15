@@ -17,23 +17,26 @@ Status: ACTIVE
 - This repository is the safe learning/prototype site for Astro + Starlight.
 - The real `amitkarpe.github.io` portal remains untouched during this experiment.
 - Astro + Starlight build and GitHub Pages deployment are proven on `main`.
-- The polished portfolio design is accepted as the current visual baseline.
-- The homepage metric strip is being removed; project cards are moving to internal curated KB/project landing pages.
+- The polished portfolio design is the current visual baseline; the old `6 / 3 / 100%` metric strip is removed.
+- All six featured project cards now lead to internal curated project/KB landing pages.
+- `/kb/` is a first-class Starlight navigation area.
 - The KB uses rewritten, sanitized public knowledge while source project repositories remain authoritative for implementation/evidence.
-- The current detailed extraction covers AWS Compliance Agent, AgentGuard, and ChatGPT AWS Lab; AgentCore, SecCop, and Nextflow Offline have staged landing pages for the next extraction pass.
+- Detailed KB extraction is live for AWS Compliance Agent, AgentGuard, and ChatGPT AWS Lab: four articles per project, 12 detailed articles total.
+- AgentCore AI Platform, SecCop, and Nextflow Offline have curated landing pages staged for a later detailed extraction pass.
+- Post-merge Pages validation confirmed the homepage, Projects, KB index, all six landing pages, all 12 detailed article routes, and Feature Lab are generated in the deployed artifact.
 - The implementation remains dependency-light: Astro + Starlight + custom CSS only; Mermaid/tags/AI plugins remain deferred.
 
 ## Active Work
 
-- Issue: #4 — Curated engineering KB rollout — phase 1
-- PR: #5 — curated engineering KB foundation
-- Current milestone: validate 6 internal project landing pages plus the first 12 source-grounded KB articles.
-- Blocker: none known; PR build and post-merge Pages validation are required.
+- Issue: #4 — completed after live KB foundation validation.
+- PR: #5 — merged (`181da114853a7c7e720e96f15a9cb9073579e00d`).
+- Current milestone: Amit review of the live curated KB structure and article quality.
+- Blocker: none.
 
 ## Next Action
 
-- Validate PR #5 in GitHub Actions. If green, merge it and verify `/`, `/projects/`, `/kb/`, all six project landing routes, representative article routes, and `/lab/feature-lab/`. Then review the live KB before starting the AgentCore/SecCop/Nextflow detailed extraction.
+- Review `/kb/` plus representative AWS Compliance Agent, AgentGuard, and ChatGPT AWS articles. If the structure/content quality is approved, continue detailed extraction for AgentCore AI Platform, SecCop, and Nextflow Offline before evaluating Mermaid, taxonomy/tags, or AI-friendly static outputs.
 
 ## Restart
 
-`@GitHub Read AGENTS.md, CONTEXT.md, Issue #4 and PR #5 in mytestlab123/mytestlab123.github.io, then continue.`
+`@GitHub Read AGENTS.md, CONTEXT.md and the latest active Issue/PR in mytestlab123/mytestlab123.github.io, then continue.`
