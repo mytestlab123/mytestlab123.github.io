@@ -23,21 +23,22 @@ Status: ACTIVE
 - Nine KB pages use D2; D2 reusable-skill triage remains owned by `amitkarpe/skills#6`.
 - `starlight-image-zoom` provides compact diagram zoom/full-SVG access.
 - `starlight-view-modes` provides the visible View Modes control and **Ctrl+Shift+Z** Zen shortcut; the right-side TOC remains useful in normal reading mode.
+- The static AI/discoverability layer is live: per-page Markdown routes, Copy/View as Markdown, Markdown alternate links, `/llms.txt`, `/llms-small.txt`, `/llms-full.txt`, and tag discovery pages.
+- `starlight-llm-actions` owns Markdown + llms outputs; `starlight-tags` owns the controlled taxonomy. Open-in-AI providers and PDF actions remain disabled.
 
 ## Active Work
 
-- Issue #19 — AI/discoverability layer: `llms.txt`, per-page Markdown actions, and lightweight tags.
-- Branch: `issue-19-ai-discoverability`.
-- KISS implementation uses `starlight-llm-actions` for both per-page Markdown + llms indexes, plus `starlight-tags` for taxonomy.
-- Open-in-AI providers and PDF actions remain disabled; the site stays static-only.
-- Initial taxonomy is applied to the six KB project landing pages plus one representative detailed page per project.
-- Blocker: none; validate the PR build next.
+- Issue #19 — completed: AI/discoverability layer.
+- PR #20 — squash merged as `e75ca15895106cb02e5487bd54bd6f443e834df8`.
+- PR build, discovery-output assertions, and post-merge GitHub Pages deployment: PASS.
+- Initial taxonomy covers the six KB project landing pages plus one representative detailed page per project.
+- `amitkarpe/amitkarpe.github.io` remains untouched.
+- Blocker: none.
 
 ## Next Action
 
-- Open the PR for Issue #19 and validate Astro/Starlight compatibility on Node 22.
-- Verify `/llms.txt`, `/llms-small.txt`, `/llms-full.txt`, `/tags/`, and one per-page `.md` route.
-- If clean, merge and verify GitHub Pages deployment before any work on `amitkarpe.github.io`.
+- Amit visually reviews `/tags/`, one KB page's Copy/View Markdown action, and the compact `/llms-small.txt` output.
+- Then decide whether the MyTestLab prototype is mature enough to migrate the proven Astro/Starlight pattern to `amitkarpe/amitkarpe.github.io`.
 
 ## Restart
 
