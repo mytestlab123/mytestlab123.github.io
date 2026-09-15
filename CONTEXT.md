@@ -1,34 +1,36 @@
 # Context
 
-Status: NOT_INITIALIZED
+Status: ACTIVE
 
-> `CONTEXT.md` is current-only restart state. Do not keep milestone history, old resource IDs, completed plans, or chat transcripts here. Use Git history, closed Issues/PRs, or `docs/history/` for history.
+> `CONTEXT.md` is current-only restart state. Keep completed history in Git history and closed Issues/PRs.
 
 ## Project Identity
 
-- Project: `<project name>`
-- Primary Repository: `<owner/repo>`
-- Primary Directory: `<optional local path>`
-- Authorized Related Repositories: `<optional list>`
+- Project: MyTestLab Engineering Lab
+- Primary Repository: `mytestlab123/mytestlab123.github.io`
+- Live Target: `https://mytestlab123.github.io/`
+- Context: PERSONAL
+- Environment: LAB
 
 ## Current Truth
 
-- Repository created from `repo-starter`.
-- Initialization interview not yet completed.
+- This repository is the safe learning/prototype site for Astro + Starlight.
+- The real `amitkarpe.github.io` portal must remain untouched during this experiment.
+- The first implementation uses only Astro + Starlight core capabilities plus minimal CSS.
+- Optional plugins and AI/MCP features are deferred until the base authoring/deployment model is proven.
+- PR validation build passes after updating to the current Starlight `social` configuration syntax.
 
 ## Active Work
 
-- Issue: `<none>`
-- PR: `<none>`
-- Current milestone: `<none>`
-- Blocker: `<none>`
+- Issue: #1 — Astro + Starlight learning portal v1
+- PR: #2 — Issue #1: Astro + Starlight learning portal v1
+- Current milestone: merge the validated prototype and verify GitHub Pages deployment/live routes.
+- Blocker: none known; live Pages deployment still needs validation.
 
 ## Next Action
 
-- Run the short `INIT.md` interview, then update project identity, `SPEC.md`, `ENV.md`, README purpose, and the first useful milestone.
+- Merge PR #2, verify the GitHub Pages deployment workflow, and validate the root site plus `/lab/feature-lab/`.
 
 ## Restart
 
-A fresh ChatGPT session should normally need only:
-
-`@GitHub Read AGENTS.md, CONTEXT.md, active Issue/PR and continue.`
+`@GitHub Read AGENTS.md, CONTEXT.md, Issue #1 and PR #2 in mytestlab123/mytestlab123.github.io, then continue.`

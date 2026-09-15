@@ -1,28 +1,31 @@
-# <Project Name>
+# MyTestLab Engineering Lab
 
-One sentence explaining the problem this repository solves.
+A public Astro + Starlight learning portal used to test portfolio and knowledge-base patterns before applying them to `amitkarpe.github.io`.
+
+Live target: https://mytestlab123.github.io/
 
 ## Start Here
 
-1. Read `AGENTS.md` for repository rules and read order.
-2. Complete `INIT.md` once when the repository is first created from this template.
-3. Read `CONTEXT.md` for current-only project identity, truth, active Issue/PR, blocker, and next action.
-4. Read `CHATGPT.md` for ChatGPT-Codex collaboration, handoffs, `go` semantics, and repository-mismatch protection.
-5. Read `ENV.md` when runtime, cloud, host, profile, or tool dependencies matter.
-6. Read `SPEC.md` before implementation, mutation, deployment, cleanup, or trusted-contract changes.
+1. Read `AGENTS.md` for repository rules.
+2. Read `CONTEXT.md` for current project state and active Issue/PR.
+3. Read `SPEC.md` for the approved learning milestone and boundaries.
+4. Read `ENV.md` for runtime and deployment dependencies.
 
-## Template Model
+## Stack
 
-Keep root contracts short and separate by responsibility:
+- Astro
+- Starlight
+- Markdown / MDX
+- GitHub Actions
+- GitHub Pages
 
-- `AGENTS.md` — router and core repository rules
-- `CHATGPT.md` — ChatGPT ↔ Codex collaboration
-- `CONTEXT.md` — current-only project/repository restart state
-- `SPEC.md` — execution authority and milestone contract
-- `INIT.md` — one-time short initialization interview
-- `ENV.md` — project runtime/tool/cloud dependencies
-- `ROADMAP.md` — useful future milestones, not current authority
+## Current Goal
 
-Historical detail belongs in Git history, closed Issues/PRs, or `docs/history/` when needed — not in `CONTEXT.md`.
+Prove the smallest useful Astro + Starlight setup with:
 
-Prefer one cohesive, reviewable PR containing related phases/tasks over micro-PRs. Reusable cross-project guidance belongs in Agent OS; machine-specific facts belong in the active `~/.agent/HOST.md` when available.
+- a portfolio-style homepage;
+- a structured documentation section;
+- a Feature Lab for built-in Starlight components;
+- automated build and GitHub Pages deployment.
+
+Optional plugins such as Mermaid, tags, image zoom, `llms.txt`, AI actions, comments, or MCP integrations are intentionally deferred until the base stack is proven.

@@ -1,0 +1,45 @@
+---
+title: MyTestLab Engineering Lab
+description: Astro + Starlight playground for engineering knowledge and portfolio experiments.
+template: splash
+hero:
+  tagline: A public lab for testing how modern engineering knowledge can look, read, and scale.
+  actions:
+    - text: Open the Feature Lab
+      link: /lab/feature-lab/
+      icon: right-arrow
+      variant: primary
+    - text: View on GitHub
+      link: https://github.com/mytestlab123/mytestlab123.github.io
+      icon: external
+      variant: minimal
+---
+
+import { Card, CardGrid } from '@astrojs/starlight/components';
+
+## What this site is testing
+
+<CardGrid>
+  <Card title="Portfolio + KB" icon="rocket">
+    Test whether one site can present projects, case studies, and deep technical notes without feeling like a plain documentation portal.
+  </Card>
+  <Card title="Engineering content" icon="cloud">
+    Explore readable patterns for AWS, DevOps, cloud security, GitHub/OIDC, troubleshooting, and automation articles.
+  </Card>
+  <Card title="Agentic AI" icon="robot">
+    Experiment with structured pages for AgentCore, MCP, tools, trust boundaries, workflows, and architecture decisions.
+  </Card>
+  <Card title="Future-ready" icon="puzzle">
+    Keep the base static and simple while leaving room for diagrams, tags, AI-friendly outputs, and richer components later.
+  </Card>
+</CardGrid>
+
+## Why this exists
+
+This is deliberately a **learning site**, not the final Amit engineering portal.
+
+The goal is to discover what works well in Astro + Starlight first, then carry only the useful patterns into `amitkarpe.github.io`.
+
+:::note[Current rule]
+Use built-in Astro/Starlight capabilities first. Add plugins only when a demonstrated need justifies them.
+:::

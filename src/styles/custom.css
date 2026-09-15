@@ -1,0 +1,28 @@
+:root {
+  --sl-content-width: 52rem;
+  --sl-text-5xl: 3.2rem;
+}
+
+.hero {
+  padding-block: clamp(3rem, 10vw, 7rem);
+}
+
+.sl-markdown-content .card,
+.card-grid > * {
+  border-radius: 1rem;
+}
+
+.sl-markdown-content pre {
+  border-radius: 0.9rem;
+}
+
+.sl-markdown-content table {
+  display: table;
+  width: 100%;
+}
+
+@media (min-width: 72rem) {
+  :root {
+    --sl-content-width: 58rem;
+  }
+}
