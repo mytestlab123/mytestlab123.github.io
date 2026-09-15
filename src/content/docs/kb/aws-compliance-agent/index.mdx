@@ -1,0 +1,56 @@
+---
+title: AWS Compliance Agent
+description: "Curated knowledge from the public aws-secops project: detection, approval, AgentCore policy, exact tools, and provider verification."
+---
+
+import { Card, CardGrid } from '@astrojs/starlight/components';
+
+**Project:** governed AWS compliance remediation in a personal lab.
+
+The central design separates **reasoning, authorization, execution, and verification**. AWS Config supplies compliance evidence; the agent explains and plans; server-owned logic binds exact scope; human approval and AgentCore Policy gate execution; direct provider readback determines whether the change actually succeeded.
+
+<CardGrid>
+  <Card title="🏗️ Architecture">
+    [From AWS Config evidence to an exact, provider-verified remediation path.](/kb/aws-compliance-agent/architecture/)
+  </Card>
+  <Card title="🔐 Authorization boundary">
+    [Why the model is an assistant rather than the AWS authorization boundary.](/kb/aws-compliance-agent/authorization-boundary/)
+  </Card>
+  <Card title="✅ Remediation & verification">
+    [How S3 and Security Group families are prepared, approved, executed, and verified independently.](/kb/aws-compliance-agent/remediation-verification/)
+  </Card>
+  <Card title="🧯 Reliability lessons">
+    [Bounded reads, UNKNOWN state, safe terminalization, reconciliation, and fresh approval after uncertainty.](/kb/aws-compliance-agent/reliability-lessons/)
+  </Card>
+</CardGrid>
+
+## Core pattern
+
+```text
+AWS Config
+   ↓ evidence
+AI agent — read / explain / plan
+   ↓
+Server-owned exact scope
+   ↓
+Human Approve / Reject
+   ↓
+AgentCore Gateway + Policy
+   ↓
+Exact narrow tool
+   ↓
+AWS API
+   ↓
+Direct provider readback
+```
+
+:::tip[Reusable lesson]
+The strongest idea is not "AI remediates AWS." It is **each layer answers a different question**: detection, recommendation, approval, policy authorization, execution, and verification remain separate.
+:::
+
+## Source
+
+- [Public repository](https://github.com/amitkarpe/aws-secops)
+- [Architecture](https://github.com/amitkarpe/aws-secops/blob/main/docs/architecture.md)
+- [Governance](https://github.com/amitkarpe/aws-secops/blob/main/docs/governance.md)
+- [Demo v1](https://github.com/amitkarpe/aws-secops/blob/main/docs/demo-v1.md)

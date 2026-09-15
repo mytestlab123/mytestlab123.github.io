@@ -1,0 +1,57 @@
+---
+title: AgentGuard
+description: "Curated knowledge from AgentGuard: deterministic policy, typed proposals, human approval, replay protection, and read-only AWS evidence."
+---
+
+import { Card, CardGrid } from '@astrojs/starlight/components';
+
+**Project:** demonstrate **why an AI security agent can be trusted** when it proposes a sensitive action.
+
+AgentGuard keeps the model away from authorization. A proposal is converted into a typed, deterministic object; policy returns an explicit decision; sensitive changes require a one-time human approval; proposal mismatch, replay, expiry, and drift fail closed.
+
+<CardGrid>
+  <Card title="🛡️ Trust model">
+    [Where the active trust boundaries sit and why aliases and server-owned target selection matter.](/kb/agentguard/trust-model/)
+  </Card>
+  <Card title="🚦 Decision model">
+    [ALLOW, DENY, and APPROVAL REQUIRED as explicit security states.](/kb/agentguard/decision-model/)
+  </Card>
+  <Card title="🔁 Approval, replay & drift">
+    [Immutable proposal binding, expiring one-time approval, mismatch checks, and retained security regressions.](/kb/agentguard/approval-replay-drift/)
+  </Card>
+  <Card title="☁️ Read-only to mutation">
+    [What the live AWS phase currently proves, and the separately designed sequence required before write authority.](/kb/agentguard/read-only-to-mutation/)
+  </Card>
+</CardGrid>
+
+## Core pattern
+
+```text
+Observed state
+   ↓
+Typed proposal
+   ↓
+Deterministic policy
+   ├─ ALLOW
+   ├─ DENY
+   └─ APPROVAL REQUIRED
+            ↓
+       human approval
+            ↓
+   exact proposal revalidation
+            ↓
+      narrow executor
+            ↓
+     verify + audit
+```
+
+:::caution[Current proof boundary]
+The current live AWS phase is **read-only WAF evidence**. Live mutation is not presented here as already proven; the controlled mutation sequence is the project’s designed next trust path.
+:::
+
+## Source
+
+- [Public repository](https://github.com/mytestlab123/agentguard)
+- [AgentGuard v1 UX and reuse decision](https://github.com/mytestlab123/agentguard/blob/main/docs/AGENTGUARD_V1_UX.md)
+- [Trust-boundary architecture](https://github.com/mytestlab123/agentguard/blob/main/docs/ARCHITECTURE.md)
+- [Learning log](https://github.com/mytestlab123/agentguard/blob/main/docs/LEARNING_LOG.md)

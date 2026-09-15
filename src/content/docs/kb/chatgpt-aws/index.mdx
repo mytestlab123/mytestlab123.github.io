@@ -1,0 +1,44 @@
+---
+title: ChatGPT AWS Lab
+description: "Curated knowledge from the public ChatGPT AWS lab: MCP inspection, Git/IaC desired state, GitHub OIDC execution, and independent verification."
+---
+
+import { Card, CardGrid } from '@astrojs/starlight/components';
+
+**Project:** a public reference for working with ChatGPT, AWS MCP, GitHub Actions, OIDC, and Terraform without long-lived CI credentials.
+
+The durable operating rule is:
+
+> **MCP discovers and verifies; Git/IaC declares; OIDC CI/CD applies.**
+
+<CardGrid>
+  <Card title="🔄 Operating model">
+    [The hybrid engineering loop that combines fast live inspection with deterministic delivery.](/kb/chatgpt-aws/operating-model/)
+  </Card>
+  <Card title="🔑 GitHub OIDC">
+    [Repository-scoped trust, short-lived identity, identity verification, and federation troubleshooting.](/kb/chatgpt-aws/github-oidc/)
+  </Card>
+  <Card title="🧩 MCP vs CI/CD">
+    [Capability and governance are different: MCP can be powerful while selected execution paths remain CI/CD-only.](/kb/chatgpt-aws/mcp-vs-cicd/)
+  </Card>
+  <Card title="🌐 Public repo security">
+    [Credential-free PRs, guarded live workflows, repository binding, action pinning, and settings outside Git.](/kb/chatgpt-aws/public-repo-security/)
+  </Card>
+</CardGrid>
+
+## Core pattern
+
+```text
+ChatGPT / agent
+  ├─ AWS MCP → inspect / diagnose / verify
+  └─ Git → IaC → PR → Actions → OIDC → AWS
+                                  ↓
+                            MCP readback
+```
+
+## Source
+
+- [Public repository](https://github.com/mytestlab123/chatgpt-aws)
+- [AWS control paths](https://github.com/mytestlab123/chatgpt-aws/blob/main/docs/CONTROL_PATHS.md)
+- [Public repository security](https://github.com/mytestlab123/chatgpt-aws/blob/main/docs/PUBLIC_TEMPLATE_SECURITY.md)
+- [OIDC + MCP CodeBuild lab](https://github.com/mytestlab123/chatgpt-aws/blob/main/docs/OIDC_MCP_CODEBUILD_LAB.md)

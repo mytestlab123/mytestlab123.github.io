@@ -1,0 +1,35 @@
+---
+title: Nextflow Offline
+description: Project landing page for repeatable offline-emulation of pinned nf-core pipelines using exact image discovery, private ECR, and network-none execution.
+---
+
+## 🧬 What this project explores
+
+A repeatable way to prepare pinned Nextflow/nf-core workflows online and then prove that a relocated runtime can execute using only prepared workflow data, plugin state, and mirrored private container images.
+
+```text
+pipeline descriptor
+  → online workflow/data/plugin discovery
+  → exact image manifest
+  → Skopeo copy to private ECR
+  → generated Nextflow ECR overrides
+  → relocated Podman offline-emulation runtime
+```
+
+## Reusable themes
+
+- **Discover exact dependencies before isolation.**
+- **Mirror images registry-to-registry** rather than relying on an operator workstation cache.
+- **Relocate the prepared bundle** so success is not accidentally tied to the original build path.
+- **Disable network and pulling** at execution time to strengthen the offline proof.
+- **Name the claim precisely:** an online host with network-disabled tasks proves offline emulation, not a physically air-gapped environment.
+
+:::note[Detailed extraction next]
+The next KB slice will curate pipeline architecture, image discovery/ECR mirroring, offline execution, and evidence/validation lessons.
+:::
+
+## Source
+
+- [Public repository](https://github.com/amitkarpe/nextflow-offline)
+- [Operator handoff](https://github.com/amitkarpe/nextflow-offline/blob/main/docs/ops/README.md)
+- [Validation strategy](https://github.com/amitkarpe/nextflow-offline/blob/main/docs/validation-strategy.md)

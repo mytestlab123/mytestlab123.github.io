@@ -1,0 +1,49 @@
+---
+title: Engineering Knowledge Base
+description: Curated, sanitized engineering lessons extracted from public project repositories.
+---
+
+import { Card, CardGrid } from '@astrojs/starlight/components';
+
+The KB turns project evidence into **reusable engineering knowledge**. Source repositories remain authoritative for implementation details, tests, and proof.
+
+:::note[Publication rule]
+Articles are rewritten and sanitized. This site does not bulk-copy project repositories, private identifiers, raw logs, credentials, or customer/internal material.
+:::
+
+## 🧭 Browse by project
+
+<CardGrid>
+  <Card title="🛡️ AWS Compliance Agent">
+    [Architecture, authorization boundaries, governed remediation, verification, and recovery lessons.](/kb/aws-compliance-agent/)
+  </Card>
+  <Card title="🔐 AgentGuard">
+    [How deterministic controls, typed proposals, one-time approval, replay protection, and read-only AWS evidence create trust.](/kb/agentguard/)
+  </Card>
+  <Card title="🔗 ChatGPT AWS Lab">
+    [MCP for live inspection and verification; Git/IaC/OIDC for durable delivery and controlled execution.](/kb/chatgpt-aws/)
+  </Card>
+  <Card title="🧠 AgentCore AI Platform">
+    [Platform access, model governance, Gateway/Policy, credentials, and governed workflows.](/kb/agentcore-ai-platform/)
+  </Card>
+  <Card title="🤖 SecCop">
+    [Secure-agent harness patterns, EC2/S3/ECR evidence, human approval, SSM remediation, and provider verification.](/kb/seccop/)
+  </Card>
+  <Card title="🧬 Nextflow Offline">
+    [Pipeline discovery, private ECR mirroring, offline execution, and evidence for network-isolated workflow operation.](/kb/nextflow-offline/)
+  </Card>
+</CardGrid>
+
+## 🧱 Standard article pattern
+
+Most KB pages follow the same reading path:
+
+1. **Problem** — the engineering problem being solved.
+2. **Key idea** — the reusable design decision.
+3. **Architecture / flow** — where responsibilities and trust boundaries sit.
+4. **Security boundary** — what is deliberately not trusted or allowed.
+5. **Verification** — what evidence proves the outcome.
+6. **Lessons learned** — what is worth carrying into another system.
+7. **Source / evidence** — links back to authoritative public project material.
+
+The first detailed extraction covers **AWS Compliance Agent, AgentGuard, and ChatGPT AWS Lab**. The remaining project landing pages are staged for the next extraction pass.
