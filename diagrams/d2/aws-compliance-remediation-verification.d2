@@ -1,0 +1,69 @@
+direction: right
+
+config: "AWS Config\nCompliance signal" {
+  style.fill: "#FFF7ED"
+  style.stroke: "#E8790C"
+  style.border-radius: 10
+}
+scope: "Server-owned scope\nRetained manifest + readiness guards" {
+  style.fill: "#F5F3FF"
+  style.stroke: "#7C3AED"
+  style.border-radius: 10
+}
+read: "Read-only operator view\nSummarize before writing" {
+  style.fill: "#EFF6FF"
+  style.stroke: "#2563EB"
+  style.border-radius: 10
+}
+request: "Explicit remediation request\nPrepare supported families" {
+  style.fill: "#EFF6FF"
+  style.stroke: "#2563EB"
+  style.border-radius: 10
+}
+s3: "S3 family\nIndependent batch" {
+  style.fill: "#FFF7ED"
+  style.stroke: "#E8790C"
+  style.border-radius: 10
+}
+sg: "Security Group family\nIndependent batch" {
+  style.fill: "#FFF7ED"
+  style.stroke: "#E8790C"
+  style.border-radius: 10
+}
+s3_approval: "S3 Approve / Reject\nExact family intent" {
+  style.fill: "#EFF6FF"
+  style.stroke: "#2563EB"
+  style.border-radius: 10
+}
+sg_approval: "SG Approve / Reject\nExact family intent" {
+  style.fill: "#EFF6FF"
+  style.stroke: "#2563EB"
+  style.border-radius: 10
+}
+execute: "Exact remediation path\nNarrow AWS action" {
+  style.fill: "#F5F3FF"
+  style.stroke: "#7C3AED"
+  style.border-radius: 10
+}
+provider: "Direct provider readback\nImmediate remediation truth" {
+  style.fill: "#ECFDF5"
+  style.stroke: "#059669"
+  style.border-radius: 10
+}
+config_later: "AWS Config convergence\nIndependent and eventual" {
+  style.fill: "#ECFDF5"
+  style.stroke: "#059669"
+  style.border-radius: 10
+}
+
+config -> scope: "detect"
+scope -> read: "bind exact scope"
+read -> request: "explicit fix request"
+request -> s3: "prepare S3"
+request -> sg: "prepare SG"
+s3 -> s3_approval
+sg -> sg_approval
+s3_approval -> execute: "approved"
+sg_approval -> execute: "approved"
+execute -> provider: "read back actual state"
+provider -> config_later: "compliance can converge later"
