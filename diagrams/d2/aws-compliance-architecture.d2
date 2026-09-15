@@ -1,0 +1,56 @@
+direction: down
+
+aws_config: "AWS Config\nCompliance evidence" {
+  style.fill: "#FFF7ED"
+  style.stroke: "#E8790C"
+  style.border-radius: 10
+}
+agent: "AWS Compliance Agent\nRead · explain · plan" {
+  style.fill: "#F5F3FF"
+  style.stroke: "#7C3AED"
+  style.border-radius: 10
+}
+planner: "Server-owned planner\nRetained manifests + exact scope" {
+  style.fill: "#F5F3FF"
+  style.stroke: "#7C3AED"
+  style.border-radius: 10
+}
+approval: "Human Approve / Reject\nExact approved intent" {
+  style.fill: "#EFF6FF"
+  style.stroke: "#2563EB"
+  style.border-radius: 10
+}
+gateway: "AgentCore Gateway\nBounded tool entry point" {
+  style.fill: "#EFF6FF"
+  style.stroke: "#2563EB"
+  style.border-radius: 10
+}
+policy: "AgentCore Policy\nALLOW / DENY" {
+  style.fill: "#EFF6FF"
+  style.stroke: "#2563EB"
+  style.border-radius: 10
+}
+tool: "Exact family tool\nNarrow mutation only" {
+  style.fill: "#FFF7ED"
+  style.stroke: "#E8790C"
+  style.border-radius: 10
+}
+aws_api: "AWS API\nApproved change" {
+  style.fill: "#FFF7ED"
+  style.stroke: "#E8790C"
+  style.border-radius: 10
+}
+verify: "Direct provider readback\nActual state decides success" {
+  style.fill: "#ECFDF5"
+  style.stroke: "#059669"
+  style.border-radius: 10
+}
+
+aws_config -> agent: "compliance evidence"
+agent -> planner: "read / explain / plan"
+planner -> approval: "exact family + immutable batch"
+approval -> gateway: "approved exact intent"
+gateway -> policy: "bounded invocation"
+policy -> tool: "ALLOW only"
+tool -> aws_api: "narrow AWS action"
+aws_api -> verify: "verify actual state"
