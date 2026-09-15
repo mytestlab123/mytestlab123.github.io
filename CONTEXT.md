@@ -15,22 +15,22 @@ Status: ACTIVE
 ## Current Truth
 
 - This repository is the safe learning/prototype site for Astro + Starlight.
-- The real `amitkarpe.github.io` portal must remain untouched during this experiment.
-- The first implementation uses only Astro + Starlight core capabilities plus minimal CSS.
-- Optional plugins and AI/MCP features are deferred until the base authoring/deployment model is proven.
-- PR validation build passes after updating to the current Starlight `social` configuration syntax.
+- The real `amitkarpe.github.io` portal remains untouched during this experiment.
+- Astro + Starlight build and GitHub Pages deployment are proven on `main`.
+- Visual feedback on the first live version asked for more real content, more emoji, a stronger portfolio feel, and Hasura-style polish.
+- The current pass remains dependency-light: Astro + Starlight + custom CSS only; optional plugins/AI/MCP features are still deferred.
 
 ## Active Work
 
 - Issue: #1 — Astro + Starlight learning portal v1
-- PR: #2 — Issue #1: Astro + Starlight learning portal v1
-- Current milestone: merge the validated prototype and verify GitHub Pages deployment/live routes.
-- Blocker: none known; live Pages deployment still needs validation.
+- PR: #3 — portfolio content and visual polish
+- Current milestone: publish a polished homepage with six real public projects, a Projects page, and improved Feature Lab presentation.
+- Blocker: none known; PR build and post-merge live validation are required.
 
 ## Next Action
 
-- Merge PR #2, verify the GitHub Pages deployment workflow, and validate the root site plus `/lab/feature-lab/`.
+- Validate PR #3 in GitHub Actions. If green, merge it and verify the live homepage, `/projects/`, and `/lab/feature-lab/` before deciding on Mermaid/tags/AI-ready extensions.
 
 ## Restart
 
-`@GitHub Read AGENTS.md, CONTEXT.md, Issue #1 and PR #2 in mytestlab123/mytestlab123.github.io, then continue.`
+`@GitHub Read AGENTS.md, CONTEXT.md, Issue #1 and PR #3 in mytestlab123/mytestlab123.github.io, then continue.`
