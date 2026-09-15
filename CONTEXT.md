@@ -21,24 +21,25 @@ Status: ACTIVE
 - `/kb/` is a first-class Starlight navigation area with curated project knowledge.
 - Detailed KB extraction is live for AWS Compliance Agent, AgentGuard, and ChatGPT AWS Lab: four articles per project, 12 detailed articles total.
 - Diagram policy is selective: **D2 for maintainable documentation diagrams** and **AWS Architecture Diagram v3.1 / draw.io style for showcase architecture**.
-- Three real KB pages currently use D2: AWS Compliance Agent architecture, AgentGuard trust model, and ChatGPT AWS operating model.
+- Six real KB pages now use D2: AWS Compliance Agent architecture; AWS Compliance Agent remediation & verification; AgentGuard trust model; AgentGuard decision model; ChatGPT AWS operating model; and ChatGPT AWS GitHub OIDC.
 - GitHub Actions installs pinned D2 v0.9.0, verifies its SHA-256, renders local SVGs, then builds Astro/Starlight. No remote diagram service is required at runtime.
 - `starlight-image-zoom` 0.16.0 is enabled for documentation images.
 - Current diagram UX: compact centered inline preview, click-to-zoom/lightbox, plus explicit `Open full SVG` link for detailed inspection.
 - AWS Compliance Agent architecture also includes a reviewed draw.io-style showcase SVG plus a canonical JSON diagram spec.
-- D2 usage-learning count: **3 real documentation uses**. After 4–5 real uses, summarize lessons and create a D2-skill intake issue in `amitkarpe/skills`.
+- Repeated D2 evidence is now sufficient for Skills Factory intake. Skill Request: `amitkarpe/skills#6` — D2 documentation diagrams.
 - AgentCore AI Platform, SecCop, and Nextflow Offline remain staged for a later detailed extraction pass.
 
 ## Active Work
 
-- Issue #8 — completed: compact diagram previews + click-to-zoom.
-- PR #9 — merged (`fdf24340cfa2729ec43575b0668d27a0ad7b38d8`).
-- Current milestone: visual review of the new compact/zoom diagram UX.
+- Issue #10 — completed: 3 additional real D2 documentation diagrams and Skills Factory evidence handoff.
+- PR #11 — merged (`28a5641f740b34cb2cb1db031a47550efeb2a6b6`).
+- Skills follow-up: `https://github.com/amitkarpe/skills/issues/6` awaits Skills Factory triage (`ACCEPT` / `MERGE` / `DEFER` / `REJECT`).
+- Current milestone: Amit visual review of all six D2 documentation uses; no further Skill implementation should be started from this repo unless the Skills Factory requests it.
 - Blocker: none.
 
 ## Next Action
 
-- Review the three live diagram pages. If the UX is accepted, add D2 to 1–2 more genuine KB pages to reach 4–5 real uses, summarize the lessons, then create the planned reusable D2-skill intake issue in `amitkarpe/skills`.
+- Review the three newest D2 pages. If accepted, continue KB extraction for AgentCore AI Platform, SecCop, and Nextflow Offline while `amitkarpe/skills#6` owns D2 Skill triage/design.
 
 ## Restart
 
