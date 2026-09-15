@@ -1,0 +1,75 @@
+---
+const projects = [
+  {
+    emoji: '🛡️',
+    eyebrow: 'AWS · DevSecOps · Agentic AI',
+    title: 'AWS Compliance Agent',
+    summary:
+      'Governed AWS compliance remediation: AWS Config detects, AI explains and plans, a human approves, AgentCore policy governs exact tools, and provider readback verifies the result.',
+    href: 'https://github.com/amitkarpe/aws-secops',
+    tags: ['AWS Config', 'AgentCore', 'Human approval'],
+  },
+  {
+    emoji: '🧠',
+    eyebrow: 'Platform AI · Bedrock · Governance',
+    title: 'AgentCore AI Platform POC',
+    summary:
+      'A small internal AI-platform proof for project keys, approved-model access, explicit allow/deny policy, audit logs, and native Bedrock credential experiments.',
+    href: 'https://github.com/mytestlab123/AgentCore',
+    tags: ['Bedrock', 'IAM', 'React'],
+  },
+  {
+    emoji: '🔐',
+    eyebrow: 'AI Safety · Policy · Cloud Security',
+    title: 'AgentGuard',
+    summary:
+      'A trust-layer demo for sensitive AI actions with ALLOW / DENY / APPROVAL REQUIRED decisions, typed proposals, replay and drift protection, and approval-bypass denial.',
+    href: 'https://github.com/mytestlab123/agentguard',
+    tags: ['Policy engine', 'AWS WAF', 'HITL'],
+  },
+  {
+    emoji: '🤖',
+    eyebrow: 'Cybersecurity · SSM · Secure Agents',
+    title: 'SecCop',
+    summary:
+      'A secure operator workflow across EC2, S3, and ECR that keeps provider evidence deterministic, requires human approval for remediation, and verifies outcomes after execution.',
+    href: 'https://github.com/mytestlab123/agentic-ai-cybersecurity-lab',
+    tags: ['SSM', 'EC2 / S3 / ECR', 'Agent security'],
+  },
+  {
+    emoji: '🔗',
+    eyebrow: 'ChatGPT · MCP · GitHub OIDC',
+    title: 'ChatGPT AWS Lab',
+    summary:
+      'A public operating model where MCP inspects and verifies, Git/IaC declares infrastructure, and GitHub Actions with OIDC performs bounded AWS changes without long-lived CI credentials.',
+    href: 'https://github.com/mytestlab123/chatgpt-aws',
+    tags: ['MCP', 'OIDC', 'Terraform'],
+  },
+  {
+    emoji: '🧬',
+    eyebrow: 'Nextflow · Containers · Private Cloud',
+    title: 'Nextflow Offline',
+    summary:
+      'Repeatable offline-emulation for pinned nf-core pipelines: discover exact images, mirror them with Skopeo to private ECR, generate overrides, and prove network-none Podman execution.',
+    href: 'https://github.com/amitkarpe/nextflow-offline',
+    tags: ['Nextflow', 'Private ECR', 'Podman'],
+  },
+];
+---
+
+<div class="portfolio-project-grid">
+  {projects.map((project) => (
+    <a class="portfolio-project-card" href={project.href} target="_blank" rel="noreferrer">
+      <div class="portfolio-project-card__top">
+        <span class="portfolio-project-card__emoji" aria-hidden="true">{project.emoji}</span>
+        <span class="portfolio-project-card__arrow" aria-hidden="true">↗</span>
+      </div>
+      <div class="portfolio-project-card__eyebrow">{project.eyebrow}</div>
+      <h3>{project.title}</h3>
+      <p>{project.summary}</p>
+      <div class="portfolio-project-card__tags">
+        {project.tags.map((tag) => <span>{tag}</span>)}
+      </div>
+    </a>
+  ))}
+</div>
