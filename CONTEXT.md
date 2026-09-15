@@ -24,19 +24,21 @@ Status: ACTIVE
 - Six real KB pages use D2; repeated evidence is tracked in `amitkarpe/skills#6` for Skills Factory triage.
 - GitHub Actions installs pinned D2 v0.9.0, verifies its SHA-256, renders local SVGs, then builds Astro/Starlight.
 - `starlight-image-zoom` 0.16.0 is enabled for compact diagram preview + click-to-zoom + full SVG access.
+- `starlight-view-modes` 0.13.1 is enabled; **Ctrl+Shift+Z** toggles Zen mode for distraction-free reading by hiding the left navigation and right page TOC and expanding the content area.
 - AgentCore AI Platform, SecCop, and Nextflow Offline remain staged for a later detailed extraction pass.
 
 ## Active Work
 
-- Issue #12 — add Zen focus mode for distraction-free KB reading.
-- PR #13 — `issue-12-zen-focus-mode`.
-- Chosen implementation: `starlight-view-modes` 0.13.1 with `Ctrl+Shift+Z` Zen-mode shortcut; avoid custom Starlight layout forks unless compatibility requires them.
-- Blocker: none; awaiting PR build validation.
+- Issue #12 — completed: Zen focus mode.
+- PR #13 — merged as `c03ef2dd8f053308a0279de15ac4a51e2feb6eaa`.
+- PR build and post-merge GitHub Pages deployment: PASS.
+- Skills follow-up: `https://github.com/amitkarpe/skills/issues/6` owns D2 Skill triage/design.
+- Blocker: none.
 
 ## Next Action
 
-- Validate PR #13 build.
-- If clean, merge, validate GitHub Pages deployment, then close Issue #12.
+- Amit visually verifies Zen mode on a KB page using `Ctrl+Shift+Z`.
+- Then continue detailed KB extraction for AgentCore AI Platform, SecCop, and Nextflow Offline.
 
 ## Restart
 
