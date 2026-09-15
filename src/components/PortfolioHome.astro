@@ -1,0 +1,129 @@
+---
+import ProjectGrid from './ProjectGrid.astro';
+---
+
+<div class="portfolio-home">
+  <section class="portfolio-hero">
+    <div class="portfolio-hero__glow portfolio-hero__glow--one" aria-hidden="true"></div>
+    <div class="portfolio-hero__glow portfolio-hero__glow--two" aria-hidden="true"></div>
+
+    <div class="portfolio-kicker">⚡ AMIT KARPE · ENGINEERING LAB</div>
+
+    <h1>
+      Cloud engineering.<br />
+      <span>AI with guardrails.</span>
+    </h1>
+
+    <p class="portfolio-hero__lede">
+      Public engineering notes and working demos across AWS, DevSecOps, automation,
+      agentic AI, MCP, security controls, and practical troubleshooting.
+    </p>
+
+    <div class="portfolio-actions">
+      <a class="portfolio-button portfolio-button--primary" href="/projects/">🚀 Explore projects</a>
+      <a class="portfolio-button portfolio-button--secondary" href="/lab/feature-lab/">🧪 Open feature lab</a>
+      <a class="portfolio-button portfolio-button--ghost" href="https://github.com/amitkarpe" target="_blank" rel="noreferrer">GitHub ↗</a>
+    </div>
+
+    <div class="portfolio-tech-strip" aria-label="Focus technologies">
+      <span>☁️ AWS</span>
+      <span>🧱 Terraform</span>
+      <span>🔐 DevSecOps</span>
+      <span>🔗 GitHub OIDC</span>
+      <span>🧠 AgentCore</span>
+      <span>🧩 MCP</span>
+    </div>
+
+    <div class="portfolio-proof-grid">
+      <article>
+        <strong>6</strong>
+        <span>featured engineering projects</span>
+      </article>
+      <article>
+        <strong>3</strong>
+        <span>core themes: cloud, security, AI</span>
+      </article>
+      <article>
+        <strong>100%</strong>
+        <span>static, public, GitHub-native portal</span>
+      </article>
+    </div>
+  </section>
+
+  <section class="portfolio-section portfolio-section--tight">
+    <div class="portfolio-section__heading">
+      <div>
+        <div class="portfolio-section__kicker">🧭 WHAT I BUILD</div>
+        <h2>Engineering systems that are observable, governed, and reusable.</h2>
+      </div>
+      <p>
+        The recurring pattern is simple: make the change path explicit, keep authority narrow,
+        verify the real outcome, and preserve useful evidence.
+      </p>
+    </div>
+
+    <div class="portfolio-focus-grid">
+      <article>
+        <div class="portfolio-focus-grid__icon">☁️</div>
+        <h3>AWS & automation</h3>
+        <p>IaC, GitHub OIDC, private-cloud workflows, repeatable operations, and evidence-driven automation.</p>
+      </article>
+      <article>
+        <div class="portfolio-focus-grid__icon">🛡️</div>
+        <h3>DevSecOps & cloud security</h3>
+        <p>Compliance remediation, policy boundaries, approval gates, least privilege, and provider verification.</p>
+      </article>
+      <article>
+        <div class="portfolio-focus-grid__icon">🤖</div>
+        <h3>Agentic AI engineering</h3>
+        <p>AgentCore, MCP, tool contracts, model governance, human-in-the-loop controls, and safe automation.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="portfolio-section">
+    <div class="portfolio-section__heading portfolio-section__heading--projects">
+      <div>
+        <div class="portfolio-section__kicker">🚀 FEATURED WORK</div>
+        <h2>Selected public projects</h2>
+      </div>
+      <a class="portfolio-inline-link" href="/projects/">View portfolio →</a>
+    </div>
+
+    <ProjectGrid />
+  </section>
+
+  <section class="portfolio-section portfolio-section--workflow">
+    <div class="portfolio-section__heading">
+      <div>
+        <div class="portfolio-section__kicker">🔄 OPERATING PATTERN</div>
+        <h2>From signal to verified outcome</h2>
+      </div>
+      <p>A visual pattern that appears repeatedly across the security and automation projects.</p>
+    </div>
+
+    <div class="portfolio-workflow" aria-label="Engineering workflow">
+      <div><strong>🔎 Detect</strong><span>finding or request</span></div>
+      <b>→</b>
+      <div><strong>🧠 Explain</strong><span>context + plan</span></div>
+      <b>→</b>
+      <div><strong>🙋 Approve</strong><span>human decision</span></div>
+      <b>→</b>
+      <div><strong>⚙️ Execute</strong><span>narrow tool</span></div>
+      <b>→</b>
+      <div><strong>✅ Verify</strong><span>provider readback</span></div>
+    </div>
+  </section>
+
+  <section class="portfolio-cta">
+    <div>
+      <span>🧪 STAGING AREA</span>
+      <h2>This site is the design lab before the final knowledge portal.</h2>
+      <p>
+        The goal is to learn what is worth carrying into <code>amitkarpe.github.io</code> —
+        not to add every available plugin.
+      </p>
+    </div>
+    <a class="portfolio-button portfolio-button--primary" href="/lab/feature-lab/">Review Starlight features →</a>
+  </section>
+</div>
