@@ -57,6 +57,16 @@ jobs:
       - name: Build
         run: npm run build
 
+      - name: Verify discovery outputs
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -s dist/llms.txt
+          test -s dist/llms-small.txt
+          test -s dist/llms-full.txt
+          test -s dist/tags/index.html
+          test -s dist/kb/agentcore-ai-platform/harness-governed-workflow.md
+
       - name: Upload Pages artifact
         if: github.event_name != 'pull_request'
         uses: actions/upload-pages-artifact@v3
