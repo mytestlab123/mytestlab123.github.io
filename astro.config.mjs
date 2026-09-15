@@ -63,9 +63,36 @@ export default defineConfig({
                 { label: 'Public Repo Security', slug: 'kb/chatgpt-aws/public-repo-security' }
               ]
             },
-            { label: '🧠 AgentCore AI Platform', slug: 'kb/agentcore-ai-platform' },
-            { label: '🤖 SecCop', slug: 'kb/seccop' },
-            { label: '🧬 Nextflow Offline', slug: 'kb/nextflow-offline' }
+            {
+              label: '🧠 AgentCore AI Platform',
+              items: [
+                { label: 'Overview', slug: 'kb/agentcore-ai-platform' },
+                { label: 'Platform Architecture', slug: 'kb/agentcore-ai-platform/platform-architecture' },
+                { label: 'Bedrock API Keys', slug: 'kb/agentcore-ai-platform/bedrock-api-keys' },
+                { label: 'Gateway & Policy', slug: 'kb/agentcore-ai-platform/gateway-policy' },
+                { label: 'Harness & Governed Workflow', slug: 'kb/agentcore-ai-platform/harness-governed-workflow' }
+              ]
+            },
+            {
+              label: '🤖 SecCop',
+              items: [
+                { label: 'Overview', slug: 'kb/seccop' },
+                { label: 'Secure-Agent Harness', slug: 'kb/seccop/secure-agent-harness' },
+                { label: 'EC2 & SSM Remediation', slug: 'kb/seccop/ec2-ssm-remediation' },
+                { label: 'Multi-Source Operator', slug: 'kb/seccop/multi-source-operator' },
+                { label: 'Approval & Verification', slug: 'kb/seccop/approval-verification' }
+              ]
+            },
+            {
+              label: '🧬 Nextflow Offline',
+              items: [
+                { label: 'Overview', slug: 'kb/nextflow-offline' },
+                { label: 'Architecture', slug: 'kb/nextflow-offline/architecture' },
+                { label: 'Image Discovery & Mirroring', slug: 'kb/nextflow-offline/image-discovery-mirroring' },
+                { label: 'Offline Runtime', slug: 'kb/nextflow-offline/offline-runtime' },
+                { label: 'Validation & Evidence', slug: 'kb/nextflow-offline/validation-evidence' }
+              ]
+            }
           ]
         },
         {

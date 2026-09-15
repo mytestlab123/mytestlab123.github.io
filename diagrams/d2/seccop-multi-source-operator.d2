@@ -1,0 +1,52 @@
+direction: right
+
+scan: "SecCop operator\nCheck CVE / Scan environment" {
+  style.fill: "#eef2ff"
+  style.stroke: "#4f46e5"
+}
+server: "Server package\nprovider facts" {
+  style.fill: "#fff7ed"
+  style.stroke: "#ea580c"
+}
+s3: "Stored artifact\nread-only suggestion" {
+  style.fill: "#eff6ff"
+  style.stroke: "#2563eb"
+}
+ecr: "Container image\nread-only suggestion" {
+  style.fill: "#f5f3ff"
+  style.stroke: "#7c3aed"
+}
+proposal: "Exact package proposal\nserver-side target binding" {
+  style.fill: "#fefce8"
+  style.stroke: "#ca8a04"
+}
+approval: "Human Approve / Reject" {
+  shape: diamond
+  style.fill: "#fff7ed"
+  style.stroke: "#f97316"
+}
+ssm: "SSM one-package update\nno reboot" {
+  style.fill: "#ecfdf5"
+  style.stroke: "#059669"
+}
+verify: "Before / Action / After\nprovider verification" {
+  style.fill: "#ecfeff"
+  style.stroke: "#0891b2"
+}
+
+scan -> server: "source check"
+scan -> s3: "source check"
+scan -> ecr: "source check"
+server -> proposal: "live remediation lane"
+proposal -> approval: "proposal-bound"
+approval -> ssm: "Approve"
+ssm -> verify: "read after change"
+approval -> verify: "Reject => no change" {
+  style.stroke-dash: 4
+}
+s3 -> verify: "suggestion only" {
+  style.stroke-dash: 4
+}
+ecr -> verify: "suggestion only" {
+  style.stroke-dash: 4
+}

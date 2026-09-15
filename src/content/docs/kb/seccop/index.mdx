@@ -1,29 +1,32 @@
 ---
 title: SecCop
-description: Project landing page for secure-agent cybersecurity workflows across EC2, S3, ECR, SSM, approval, and provider verification.
+description: Curated secure-agent engineering patterns across deterministic planning, EC2/SSM remediation, multi-source security operations, approval, and provider verification.
 ---
 
 ## 🤖 What this project explores
 
-SecCop is a public secure-agent learning lab. Its current operator path combines deterministic provider evidence with an explanatory agent while keeping remediation behind explicit approval and narrow execution boundaries.
+SecCop is a public secure-agent learning lab. The important engineering idea is that **model explanation and deterministic authority stay separate**.
 
-The repository also preserves earlier harness experiments that separate an untrusted plan-producing model from deterministic validation and tool dispatch.
+The repository includes both early synthetic harness experiments and a later operator experience around EC2, S3, and ECR evidence. The current public operator documentation keeps the EC2 server path as the proven live mutation lane; stored-artifact and container paths are presented conservatively as read-only/suggestion lanes unless a separate proof explicitly enables more.
+
+## 📚 Read this project as four patterns
+
+1. [**Secure-agent harness**](/kb/seccop/secure-agent-harness/) — validate the whole plan, authorize deterministically, and fail closed.
+2. [**EC2 & SSM remediation**](/kb/seccop/ec2-ssm-remediation/) — exact package proposal, human approval, one-package update, before/after evidence.
+3. [**Multi-source operator**](/kb/seccop/multi-source-operator/) — one operator surface across server, stored artifact, and container findings without pretending every source has the same capability.
+4. [**Approval & verification**](/kb/seccop/approval-verification/) — proposal-bound approval and provider truth as separate responsibilities.
 
 ## Reusable themes
 
-- **Model plans are untrusted input** until deterministic code validates them.
-- **Tool contracts stay narrow** instead of exposing generic AWS mutation authority.
-- **Provider facts and aliases** can be sanitized before becoming model-visible.
-- **Human approval and verification** remain explicit parts of remediation.
-- **Different sources can have different capabilities**: EC2 may have a real remediation lane while stored/container artifacts can remain read-only suggestions.
+- Model output is untrusted runtime data.
+- The entire plan should be validated before the first tool executes.
+- Browser/model-visible data can use aliases while raw provider identifiers stay server-side.
+- Approval cannot grant a capability the tool registry does not contain.
+- A successful API call is not enough; show before/after provider evidence.
 
-:::note[Detailed extraction next]
-The next KB slice will curate focused pages on the secure-agent harness, Inspector/EC2/SSM remediation, multi-source security operations, human approval/verification, and secure-agent lessons.
-:::
-
-## Source
+## 🔗 Source
 
 - [Public repository](https://github.com/mytestlab123/agentic-ai-cybersecurity-lab)
 - [Architecture](https://github.com/mytestlab123/agentic-ai-cybersecurity-lab/blob/main/docs/ARCHITECTURE.md)
+- [SecCop live demo](https://github.com/mytestlab123/agentic-ai-cybersecurity-lab/blob/main/docs/SECCOP_LIVE_DEMO.md)
 - [SecCop operator demo](https://github.com/mytestlab123/agentic-ai-cybersecurity-lab/blob/main/docs/SECCOP_OPERATOR_DEMO.md)
-- [Learning log](https://github.com/mytestlab123/agentic-ai-cybersecurity-lab/blob/main/docs/LEARNING_LOG.md)
