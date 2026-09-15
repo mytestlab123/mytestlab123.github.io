@@ -1,0 +1,52 @@
+defaults:
+  color: "#6b7280"
+
+tags:
+  aws:
+    label: "AWS"
+    description: "AWS architecture, operations, identity, and provider evidence"
+    icon: "☁️"
+  cloud-security:
+    label: "Cloud Security"
+    description: "Cloud security controls, remediation, and evidence"
+    icon: "🛡️"
+  governance:
+    label: "Governance"
+    description: "Authorization, policy, approval, and trust boundaries"
+    icon: "🔐"
+  agentic-ai:
+    label: "Agentic AI"
+    description: "Bounded AI agents, harnesses, and governed tool use"
+    icon: "🤖"
+  human-in-the-loop:
+    label: "Human in the Loop"
+    description: "Explicit approval and review before sensitive actions"
+    icon: "👤"
+  verification:
+    label: "Verification"
+    description: "Provider readback, evidence, reconciliation, and proof boundaries"
+    icon: "✅"
+  automation:
+    label: "Automation"
+    description: "Repeatable engineering and delivery automation"
+    icon: "⚙️"
+  mcp:
+    label: "MCP"
+    description: "Model Context Protocol inspection and governed tool integration"
+    icon: "🔌"
+  identity-access:
+    label: "Identity & Access"
+    description: "OIDC, credentials, IAM, and scoped access"
+    icon: "🔑"
+  offline-computing:
+    label: "Offline Computing"
+    description: "Prepared dependencies and network-isolated execution"
+    icon: "📦"
+  containers:
+    label: "Containers"
+    description: "Container image discovery, mirroring, and runtime controls"
+    icon: "📦"
+  nextflow:
+    label: "Nextflow"
+    description: "Nextflow and nf-core workflow portability"
+    icon: "🧬"

@@ -1,6 +1,11 @@
 ---
 title: Architecture — From Config to Verified Remediation
 description: How the AWS Compliance Agent separates detection, reasoning, approval, policy, execution, and provider verification.
+tags:
+  - aws
+  - cloud-security
+  - governance
+  - verification
 ---
 
 ## 🎯 Problem

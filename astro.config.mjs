@@ -1,6 +1,8 @@
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 import starlightImageZoom from 'starlight-image-zoom';
+import starlightLlmActions from 'starlight-llm-actions';
+import starlightTags from 'starlight-tags';
 import starlightViewModes from 'starlight-view-modes';
 
 export default defineConfig({
@@ -18,6 +20,33 @@ export default defineConfig({
           zenModeSettings: {
             keyboardShortcut: ['Ctrl+Shift+Z']
           }
+        }),
+        starlightLlmActions({
+          actions: {
+            copyMarkdown: true,
+            viewMarkdown: true,
+            printPdf: false,
+            openIn: false
+          },
+          linkAlternate: true,
+          llmsTxt: {
+            title: 'Amit Engineering Lab',
+            description: 'Curated public engineering knowledge for AWS, DevSecOps, automation, agentic AI, MCP, cloud security, and offline workflow engineering.',
+            subsets: [
+              {
+                label: 'Small',
+                description: 'Compact index of the Knowledge Base and its six project landing pages.',
+                paths: ['kb', 'kb/*']
+              }
+            ]
+          }
+        }),
+        starlightTags({
+          configPath: 'tags.yml',
+          tagsPagesPrefix: 'tags',
+          tagsIndexSlug: 'tags',
+          onInlineTagsNotFound: 'error',
+          sidebar: false
         })
       ],
       customCss: ['./src/styles/custom.css', './src/styles/diagrams.css'],
@@ -27,7 +56,8 @@ export default defineConfig({
           items: [
             { label: '🏠 Home', slug: '' },
             { label: '🚀 Projects', slug: 'projects' },
-            { label: '📚 Knowledge Base', slug: 'kb' }
+            { label: '📚 Knowledge Base', slug: 'kb' },
+            { label: '🏷️ Tags', link: '/tags/' }
           ]
         },
         {

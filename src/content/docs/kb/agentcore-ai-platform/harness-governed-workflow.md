@@ -1,6 +1,12 @@
 ---
 title: Harness and Governed Workflow
 description: Separate lessons from a managed AgentCore Harness lifecycle proof and a bounded governed MCP remediation path.
+tags:
+  - aws
+  - agentic-ai
+  - governance
+  - human-in-the-loop
+  - verification
 ---
 
 ## 🎯 Problem
